@@ -1,0 +1,20 @@
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.exe.config
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.exe
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.pdb
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csprojAssemblyReference.cache
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\MainWindow.g.cs
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\App.g.cs
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf_MarkupCompile.cache
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf_MarkupCompile.lref
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\MainWindow.baml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.g.resources
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga_hf.Properties.Resources.resources
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csproj.GenerateResource.cache
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csproj.CopyComplete
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.exe
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.pdb
