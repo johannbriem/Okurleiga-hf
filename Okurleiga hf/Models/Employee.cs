@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Okurleiga_hf.Models;
 
 namespace Okurleiga_hf.Models
 {
@@ -51,7 +52,7 @@ namespace Okurleiga_hf.Models
                 return FirstName + " " + LastName;
             }
         }
-        public uint SocialNumber { get; set; }
+        public string SocialNumber { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public int Zip { get; set; }

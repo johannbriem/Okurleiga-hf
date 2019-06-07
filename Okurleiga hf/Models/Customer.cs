@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Okurleiga_hf.Models;
 
 namespace Okurleiga_hf.Models
 {
@@ -52,15 +53,15 @@ namespace Okurleiga_hf.Models
                 return FirstName + " " + LastName;
             }
         }
-        public uint SocialNumber { get; set; }
+        public string SocialNumber { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public ObservableCollection<Rent> Rents { get; set; }
+        //public ObservableCollection<Rent> Rents { get; set; }
 
-        public Customer()
-        {
-            this.Rents = new ObservableCollection<Rent>();
-        }
+        //public Customer()
+        //{
+        //    this.Rents = new ObservableCollection<Rent>();
+        //}
 
 
         private void INotifyPropertyChanged(string PropertyName)

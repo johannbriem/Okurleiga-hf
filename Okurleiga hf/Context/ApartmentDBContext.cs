@@ -11,7 +11,7 @@ namespace Okurleiga_hf.Context
     class ApartmentDBContext : DbContext
     {
         public DbSet<Apartment> Apartments { get; set; }
-        public  DbSet<ApartmentOwner> ApartmentOwners { get; set; }        
+        public DbSet<ApartmentOwner> ApartmentOwners { get; set; }        
         public DbSet<ApartmentIncident> ApartmentIncidents { get; set; }        
         public DbSet<Customer> Customers { get; set; }        
         public DbSet<Employee> Employees { get; set; }        

@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Okurleiga_hf.Models;
 
 namespace Okurleiga_hf.Models
 {
@@ -13,10 +14,9 @@ namespace Okurleiga_hf.Models
     {
 
         public event PropertyChangedEventHandler PropertyChanged;
-
-        [Key]
-        public int OwnerID { get; set; }
-        public int ApartmentID { get; set; }
+                
+        public int Id { get; set; }
+        public Apartment Apartment { get; set; }
         public string CompanyName { get; set; }
 
         private string _contactFirstName;
@@ -62,10 +62,10 @@ namespace Okurleiga_hf.Models
         public string Phone { get; set; }
         public ObservableCollection<Apartment> Apartments { get; set; }
 
-        public ApartmentOwner()
-        {
-            this.Apartments = new ObservableCollection<Apartment>();
-        }
+        //public ApartmentOwner()
+        //{
+        //    this.Apartment = new ObservableCollection<Apartment>();
+        //}
 
 
 
