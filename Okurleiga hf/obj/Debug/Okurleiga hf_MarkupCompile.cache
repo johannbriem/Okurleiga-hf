@@ -16,5 +16,5 @@ C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\App.xaml
 25370969452
 MainWindow.xaml;Windows\Change\ChangeApartmentIncidentWindow.xaml;Windows\New\NewApartmentIncidentWindow.xaml;Windows\New\NewApartmentOwnerWindow.xaml;Windows\New\NewApartmentWindow.xaml;Windows\New\NewCustomerWindow.xaml;Windows\New\NewRentWindow.xaml;Windows\View\ViewApartmentIncidentWindow.xaml;Windows\View\ViewApartmentOwnerWindow.xaml;Windows\View\ViewApartmentWindow.xaml;Windows\Change\ChangeCustomerWindow.xaml;Windows\View\ViewRentWindow.xaml;
 
-True
+False
 

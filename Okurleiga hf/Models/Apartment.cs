@@ -12,7 +12,7 @@ namespace Okurleiga_hf.Models
     {
 
         public int Id { get; set; }
-        public ApartmentOwner Owner { get; set; }
+        public ApartmentOwner ApartmentOwner { get; set; }
         public DateTime RegisteredAt { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

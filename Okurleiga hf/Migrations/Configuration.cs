@@ -1,6 +1,6 @@
 namespace Okurleiga_hf.Migrations
 {
-    using Okurleiga_hf.Models;
+    
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -61,7 +61,7 @@ namespace Okurleiga_hf.Migrations
                 x => new { x.FirstName, x.LastName },
                 e1,
                 e2,
-                e3
+                e3               
                 );
 
             context.SaveChanges();
@@ -218,13 +218,14 @@ namespace Okurleiga_hf.Migrations
                 RegisterDate = new DateTime(2018, 01, 02),
                 RegisterName = "Gunnar Þór Jónsson",
                 IncidentInfo = "Bilaður ofn inní stofu",
-                Status = "Nýtt",
+                Status = true,
                 ContractorWhoFixed = "Gulli Byggir"
             };
 
-            context.ApartmentIncidents.AddOrUpdate
-                (x => x.IncidentInfo,
-                 ai1);
+            context.ApartmentIncidents.AddOrUpdate(
+                x => x.IncidentInfo,
+                 ai1
+                 );
 
             context.SaveChanges();
             
@@ -270,12 +271,12 @@ namespace Okurleiga_hf.Migrations
                 ao2,
                 ao3
                 );
-            context.ApartmentOwners.Include(x => x.Apartment).ToArray();
+            //context.ApartmentOwners.Include(x => x.Apartment).ToArray();
             context.SaveChanges();
 
 
-            ao1.Apartment = a1;
-            ai1.Apartment = a1;
+            //ao1.Apartment = a1;
+            //ai1.Apartment = a1;
 
 
 
