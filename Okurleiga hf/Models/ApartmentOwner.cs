@@ -18,6 +18,7 @@ namespace Okurleiga_hf.Models
         public int Id { get; set; }
         public Apartment Apartment { get; set; }
         public string CompanyName { get; set; }
+        
 
         private string _contactFirstName;
         public string ContactFirstName
@@ -62,11 +63,11 @@ namespace Okurleiga_hf.Models
         public string Phone { get; set; }
         public ObservableCollection<Apartment> Apartments { get; set; }
 
-        //public ApartmentOwner()
-        //{
-        //    this.Apartment = new ObservableCollection<Apartment>();
-        //}
-
+        public ApartmentOwner()
+        {
+            this.Apartments = new ObservableCollection<Apartment>();
+        }
+        public string Email { get; set; }
 
 
 

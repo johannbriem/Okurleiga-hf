@@ -1,0 +1,61 @@
+﻿<Window x:Class="Okurleiga_hf.Windows.Change.ChangeApartmentIncidentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{StaticResource MaterialDesignFont}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Breyta Atviki" Height="426.562" Width="438.125">
+    <Grid Margin="0,0,2,-2">
+        <Menu Height="Auto" VerticalAlignment="Top">
+            <MenuItem Header="Skrá">
+                <MenuItem Header="Nýtt atvik">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Create"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Prenta...">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Printer"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Vista" >
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="ContentSave"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Hætta">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Close"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="114,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="95,191,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="37,85,0,0" TextWrapping="Wrap" Text="Dags. Atviks" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="37,120,0,0" TextWrapping="Wrap" Text="Tilkynanndi" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="42,159,0,0" TextWrapping="Wrap" Text="Staða:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="42,195,0,0" TextWrapping="Wrap" Text="Verktaki" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="37,48,0,0" TextWrapping="Wrap" Text="Húsnæði" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbIncidentStatus" HorizontalAlignment="Left" Margin="95,147,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbApartment" HorizontalAlignment="Left" Margin="114,40,0,0" VerticalAlignment="Top" Width="143"/>
+        <DatePicker x:Name="dpIncidentDate" HorizontalAlignment="Left" Margin="137,73,0,0" VerticalAlignment="Top" Width="120"/>
+        <RichTextBox x:Name="rtbIncidentInfo" HorizontalAlignment="Left" Height="67" Margin="37,232,0,0" VerticalAlignment="Top" Width="220">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Lýsing á tjóni..."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button Content="Vista" HorizontalAlignment="Left" Margin="309,338,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Hætta" HorizontalAlignment="Left" Margin="216,338,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+    </Grid>
+</Window>

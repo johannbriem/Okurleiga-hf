@@ -16,11 +16,8 @@ namespace Okurleiga_hf.Models
         public DateTime RegisterDate { get; set; }
         public string RegisterName { get; set; }
         public string IncidentInfo { get; set; }
+        public string Status { get; set; }
+        public string ContractorWhoFixed { get; set; }
         
-
-        //public ApartmentIncident()
-        //{
-        //    this.Apartments = new ObservableCollection<Apartment>();
-        //}
     }
 }

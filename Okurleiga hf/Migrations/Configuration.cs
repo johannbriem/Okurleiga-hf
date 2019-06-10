@@ -217,13 +217,14 @@ namespace Okurleiga_hf.Migrations
             {                
                 RegisterDate = new DateTime(2018, 01, 02),
                 RegisterName = "Gunnar Þór Jónsson",
-                IncidentInfo = "Bilaður ofn inní stofu"
+                IncidentInfo = "Bilaður ofn inní stofu",
+                Status = "Nýtt",
+                ContractorWhoFixed = "Gulli Byggir"
             };
-            
-            context.ApartmentIncidents.AddOrUpdate(
-                x => x.IncidentInfo,
-                ai1
-                );
+
+            context.ApartmentIncidents.AddOrUpdate
+                (x => x.IncidentInfo,
+                 ai1);
 
             context.SaveChanges();
             
@@ -235,6 +236,7 @@ namespace Okurleiga_hf.Migrations
                 Address = "Köllunarklettsvegur 2",
                 City = "Reykjavík",
                 Zip = 201,
+                Email = "siggi@loftid.is",
                 Phone = "571-3467"
             };
 
@@ -246,6 +248,7 @@ namespace Okurleiga_hf.Migrations
                 Address = "Skólavegur 2",
                 City = "Reykjavík",
                 Zip = 201,
+                Email = "stebbi@byggjum.is",
                 Phone = "571-1007"
             };
 
@@ -257,6 +260,7 @@ namespace Okurleiga_hf.Migrations
                 Address = "Brjánsholt 4",
                 City = "Kópavogur",
                 Zip = 241,
+                Email = "adalheidur@dhl.is",
                 Phone = "865-2365"
             };
                         
@@ -270,10 +274,10 @@ namespace Okurleiga_hf.Migrations
             context.SaveChanges();
 
 
-            //ao1.Apartment(a1);
-            //ai1.Apartment = a1;
+            ao1.Apartment = a1;
+            ai1.Apartment = a1;
 
-            
+
 
 
             context.SaveChanges();

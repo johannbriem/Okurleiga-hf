@@ -1,0 +1,47 @@
+﻿<Window x:Class="Okurleiga_hf.Windows.NewApartmentOwnerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{StaticResource MaterialDesignFont}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="NewApartmentOwnerWindow" Height="450" Width="800">
+    <Grid VerticalAlignment="Top" Margin="16,16,16,0" Height="106">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto" MinWidth="931"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Grid.Column="2" Margin="19,30,0,60"/>
+        <TextBlock Grid.Column="2" Margin="43,32,835,58" VerticalAlignment="Center" Height="16">Fyrirtæki</TextBlock>
+        <TextBox Grid.Column="2" Margin="156,26,634,56" VerticalAlignment="Center" Height="24"></TextBox>
+        <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Margin="19,60,0,30" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,62,835,28" VerticalAlignment="Center" Height="16"><Run Text="Tengiliður Fornafn"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,56,634,26" VerticalAlignment="Center" Height="24"/>
+        <materialDesign:PackIcon Kind="Numeric" VerticalAlignment="Center" Margin="19,90,0,0" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,92,835,-2" VerticalAlignment="Center" Height="16"><Run Text="Tengiliður Eftirnafn"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,82,634,0" VerticalAlignment="Center" Height="24"/>
+        <materialDesign:PackIcon Kind="Email" VerticalAlignment="Center" Margin="19,120,0,-30" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,122,835,-32" VerticalAlignment="Center" Height="16"><Run Text="Heimilisfang"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,112,634,-30" VerticalAlignment="Center" Height="24"/>
+        <materialDesign:PackIcon Kind="Phone" VerticalAlignment="Center" Margin="19,150,0,-60" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,152,835,-62" VerticalAlignment="Center" Height="16"><Run Text="Borg"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,142,634,-60" VerticalAlignment="Center" Height="24"/>
+        <TextBlock Grid.Column="2" Margin="43,180,835,-90" VerticalAlignment="Center" Height="16"><Run Text="Póstnúmer"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,170,634,-88" VerticalAlignment="Center" Height="24"/>
+        <materialDesign:PackIcon Kind="Phone" VerticalAlignment="Center" Margin="19,208,0,-118" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,210,835,-120" VerticalAlignment="Center" Height="16"><Run Text="Sími"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,200,634,-118" VerticalAlignment="Center" Height="24"/>
+        <materialDesign:PackIcon Kind="Email" VerticalAlignment="Center" Margin="19,178,0,-88" Grid.Column="2"/>
+        <Button x:Name="btnSaveClick" Content="Vista" Grid.Column="2" HorizontalAlignment="Left" Margin="408,289,0,-215" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnQuitClick" Content="Hætta" Grid.Column="2" HorizontalAlignment="Left" Margin="311,289,0,-215" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Window>

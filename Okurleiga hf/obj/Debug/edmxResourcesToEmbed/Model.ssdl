@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Okurleiga_hf.Context.ApartmentDBContextModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ApartmentIncidents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegisterDate" Type="datetime" Nullable="false" />
+    <Property Name="RegisterName" Type="nvarchar(max)" />
+    <Property Name="IncidentInfo" Type="nvarchar(max)" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="ContractorWhoFixed" Type="nvarchar(max)" />
+    <Property Name="Apartment_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="ApartmentOwners">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar(max)" />
+    <Property Name="ContactFirstName" Type="nvarchar(max)" />
+    <Property Name="ContactLastName" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Zip" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Apartment_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Apartments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegisteredAt" Type="datetime" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Zip" Type="int" Nullable="false" />
+    <Property Name="Bedroom" Type="int" Nullable="false" />
+    <Property Name="Bathroom" Type="int" Nullable="false" />
+    <Property Name="Size" Type="int" Nullable="false" />
+    <Property Name="RentPrize" Type="int" Nullable="false" />
+    <Property Name="Available" Type="bit" Nullable="false" />
+    <Property Name="RentType" Type="nvarchar(max)" />
+    <Property Name="Garage" Type="bit" Nullable="false" />
+    <Property Name="Smoking" Type="bit" Nullable="false" />
+    <Property Name="Pet" Type="bit" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" />
+    <Property Name="ApartmentOwner_Id" Type="int" />
+    <Property Name="Owner_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="SocialNumber" Type="nvarchar(max)" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" />
+    <Property Name="LastName" Type="nvarchar(max)" />
+    <Property Name="SocialNumber" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Zip" Type="int" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar(max)" />
+    <Property Name="DateStart" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rents">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RentDate" Type="datetime" Nullable="false" />
+    <Property Name="Apartment_Id" Type="int" />
+    <Property Name="Customer_CustomerID" Type="int" />
+    <Property Name="Employee_EmployeeID" Type="int" />
+  </EntityType>
+  <Association Name="FK_dbo_ApartmentIncidents_dbo_Apartments_Apartment_Id">
+    <End Role="Apartments" Type="Self.Apartments" Multiplicity="0..1" />
+    <End Role="ApartmentIncidents" Type="Self.ApartmentIncidents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApartmentIncidents">
+        <PropertyRef Name="Apartment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_ApartmentOwners_dbo_Apartments_Apartment_Id">
+    <End Role="Apartments" Type="Self.Apartments" Multiplicity="0..1" />
+    <End Role="ApartmentOwners" Type="Self.ApartmentOwners" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ApartmentOwners">
+        <PropertyRef Name="Apartment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Apartments_dbo_ApartmentOwners_ApartmentOwner_Id">
+    <End Role="ApartmentOwners" Type="Self.ApartmentOwners" Multiplicity="0..1" />
+    <End Role="Apartments" Type="Self.Apartments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApartmentOwners">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Apartments">
+        <PropertyRef Name="ApartmentOwner_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Apartments_dbo_ApartmentOwners_Owner_Id">
+    <End Role="ApartmentOwners" Type="Self.ApartmentOwners" Multiplicity="0..1" />
+    <End Role="Apartments" Type="Self.Apartments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApartmentOwners">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Apartments">
+        <PropertyRef Name="Owner_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Rents_dbo_Apartments_Apartment_Id">
+    <End Role="Apartments" Type="Self.Apartments" Multiplicity="0..1" />
+    <End Role="Rents" Type="Self.Rents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apartments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Rents">
+        <PropertyRef Name="Apartment_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Rents_dbo_Customers_Customer_CustomerID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="0..1" />
+    <End Role="Rents" Type="Self.Rents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Rents">
+        <PropertyRef Name="Customer_CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Rents_dbo_Employees_Employee_EmployeeID">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Rents" Type="Self.Rents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Rents">
+        <PropertyRef Name="Employee_EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Okurleiga_hfContextApartmentDBContextModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApartmentIncidents" EntityType="Self.ApartmentIncidents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApartmentOwners" EntityType="Self.ApartmentOwners" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Apartments" EntityType="Self.Apartments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rents" EntityType="Self.Rents" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_ApartmentIncidents_dbo_Apartments_Apartment_Id" Association="Self.FK_dbo_ApartmentIncidents_dbo_Apartments_Apartment_Id">
+      <End Role="Apartments" EntitySet="Apartments" />
+      <End Role="ApartmentIncidents" EntitySet="ApartmentIncidents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_ApartmentOwners_dbo_Apartments_Apartment_Id" Association="Self.FK_dbo_ApartmentOwners_dbo_Apartments_Apartment_Id">
+      <End Role="Apartments" EntitySet="Apartments" />
+      <End Role="ApartmentOwners" EntitySet="ApartmentOwners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Apartments_dbo_ApartmentOwners_ApartmentOwner_Id" Association="Self.FK_dbo_Apartments_dbo_ApartmentOwners_ApartmentOwner_Id">
+      <End Role="ApartmentOwners" EntitySet="ApartmentOwners" />
+      <End Role="Apartments" EntitySet="Apartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Apartments_dbo_ApartmentOwners_Owner_Id" Association="Self.FK_dbo_Apartments_dbo_ApartmentOwners_Owner_Id">
+      <End Role="ApartmentOwners" EntitySet="ApartmentOwners" />
+      <End Role="Apartments" EntitySet="Apartments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Rents_dbo_Apartments_Apartment_Id" Association="Self.FK_dbo_Rents_dbo_Apartments_Apartment_Id">
+      <End Role="Apartments" EntitySet="Apartments" />
+      <End Role="Rents" EntitySet="Rents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Rents_dbo_Customers_Customer_CustomerID" Association="Self.FK_dbo_Rents_dbo_Customers_Customer_CustomerID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Rents" EntitySet="Rents" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Rents_dbo_Employees_Employee_EmployeeID" Association="Self.FK_dbo_Rents_dbo_Employees_Employee_EmployeeID">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Rents" EntitySet="Rents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

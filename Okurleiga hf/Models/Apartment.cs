@@ -26,15 +26,15 @@ namespace Okurleiga_hf.Models
         public bool Garage { get; set; }
         public bool Smoking { get; set; }
         public bool Pet { get; set; }
-        public string Type { get; set; }        
-       
+        public string Type { get; set; }
+        //public ObservableCollection<Rent> Rents { get; set; }
 
         //public Apartment()
         //{
-        //    this.Rent = new ObservableCollection<Rent>();
+        //    this.Rents = new ObservableCollection<Rent>();
         //}
 
-        
+
 
     }
 }

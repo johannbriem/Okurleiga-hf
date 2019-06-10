@@ -56,14 +56,7 @@ namespace Okurleiga_hf.Models
         public string SocialNumber { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        //public ObservableCollection<Rent> Rents { get; set; }
-
-        //public Customer()
-        //{
-        //    this.Rents = new ObservableCollection<Rent>();
-        //}
-
-
+        
         private void INotifyPropertyChanged(string PropertyName)
         {
             if (PropertyChanged != null)

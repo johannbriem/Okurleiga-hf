@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Okurleiga_hf.Windows.New;
+using Okurleiga_hf.Windows.View;
 
 namespace Okurleiga_hf
 {
