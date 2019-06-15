@@ -1,16 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Okurleiga_hfContextApartmentDBContextModelStoreContainer" CdmEntityContainer="Entities">
-    <EntitySetMapping Name="C__MigrationHistory">
-      <EntityTypeMapping TypeName="Okurleiga_hf.Context.ApartmentDBContextModel.C__MigrationHistory">
-        <MappingFragment StoreEntitySet="__MigrationHistory">
-          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
-          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
-          <ScalarProperty Name="Model" ColumnName="Model" />
-          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
+  <EntityContainerMapping StorageEntityContainer="Okurleiga_hfContextApartmentDBContextModelStoreContainer" CdmEntityContainer="Entities2">
     <EntitySetMapping Name="ApartmentIncidents">
       <EntityTypeMapping TypeName="Okurleiga_hf.Context.ApartmentDBContextModel.ApartmentIncident">
         <MappingFragment StoreEntitySet="ApartmentIncidents">
@@ -36,7 +26,6 @@
           <ScalarProperty Name="Zip" ColumnName="Zip" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
           <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Apartment_Id" ColumnName="Apartment_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -59,26 +48,26 @@
           <ScalarProperty Name="Pet" ColumnName="Pet" />
           <ScalarProperty Name="Type" ColumnName="Type" />
           <ScalarProperty Name="ApartmentOwner_Id" ColumnName="ApartmentOwner_Id" />
-          <ScalarProperty Name="Owner_Id" ColumnName="Owner_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="Okurleiga_hf.Context.ApartmentDBContextModel.Customer">
         <MappingFragment StoreEntitySet="Customers">
-          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="SocialNumber" ColumnName="SocialNumber" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Apartment_Id" ColumnName="Apartment_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="Okurleiga_hf.Context.ApartmentDBContextModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="SocialNumber" ColumnName="SocialNumber" />
@@ -96,8 +85,8 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="RentDate" ColumnName="RentDate" />
           <ScalarProperty Name="Apartment_Id" ColumnName="Apartment_Id" />
-          <ScalarProperty Name="Customer_CustomerID" ColumnName="Customer_CustomerID" />
-          <ScalarProperty Name="Employee_EmployeeID" ColumnName="Employee_EmployeeID" />
+          <ScalarProperty Name="Customer_Id" ColumnName="Customer_Id" />
+          <ScalarProperty Name="Employee_Id" ColumnName="Employee_Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

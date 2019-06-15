@@ -13,7 +13,8 @@ namespace Okurleiga_hf.Models
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public int EmployeeID { get; set; }
+        public int Id { get; set; }
+        public ObservableCollection<Rent> Rents { get; set; }
 
         private string _firstName;
         public string FirstName
@@ -57,8 +58,7 @@ namespace Okurleiga_hf.Models
         public string City { get; set; }
         public int Zip { get; set; }
         public string Phone { get; set; }
-        public DateTime DateStart { get; set; }
-        public ObservableCollection<Rent> Rents { get; set; }
+        public DateTime DateStart { get; set; }        
 
         public Employee()
         {

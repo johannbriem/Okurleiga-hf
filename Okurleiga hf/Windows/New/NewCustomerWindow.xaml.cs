@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Okurleiga_hf.Context;
 using Okurleiga_hf.Models;
 
 namespace Okurleiga_hf.Windows
@@ -20,6 +21,8 @@ namespace Okurleiga_hf.Windows
     /// </summary>
     public partial class NewCustomerWindow : Window
     {
+        Customer c;
+
         public NewCustomerWindow()
         {
             InitializeComponent();
@@ -27,12 +30,15 @@ namespace Okurleiga_hf.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
+            c = new Customer();
+            this.DataContext = c;
         }
 
         private void BtnSaveClick_Click(object sender, RoutedEventArgs e)
         {
-
+            SharedContext.dBContext.Customers.Add(c);
+            SharedContext.dBContext.SaveChanges();
+            this.Close();
         }
 
         private void BtnQuitClick_Click(object sender, RoutedEventArgs e)

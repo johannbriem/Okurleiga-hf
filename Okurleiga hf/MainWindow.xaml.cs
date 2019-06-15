@@ -33,16 +33,22 @@ namespace Okurleiga_hf
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            CollectionViewSource view = new CollectionViewSource();
-            //SharedContext.dBContext.ApartmentIncidents.Load();
-            //SharedContext.dBContext.ApartmentOwners.Load();
-            //SharedContext.dBContext.Apartments.Load();
-            //SharedContext.dBContext.Customers.Load();
-            //SharedContext.dBContext.Employees.Load();
+            CollectionViewSource view = new CollectionViewSource(); ;
+            SharedContext.dBContext.ApartmentIncidents.Load();
+            SharedContext.dBContext.ApartmentOwners.Load();
+            SharedContext.dBContext.Apartments.Load();
+            SharedContext.dBContext.Customers.Load();
+            SharedContext.dBContext.Employees.Load();
+
+            SharedContext.Customers = SharedContext.dBContext.Customers.Local;
+            SharedContext.ApartmentIncidents = SharedContext.dBContext.ApartmentIncidents.Local;
+            SharedContext.ApartmentOwners = SharedContext.dBContext.ApartmentOwners.Local;
+            SharedContext.Employees = SharedContext.dBContext.Employees.Local;
+
+            
             
 
-            view.Source = SharedContext.customers;
-            this.DataContext = view;
+            
         }
 
         private void menu_NewCustomerClick(object sender, RoutedEventArgs e)
@@ -78,6 +84,11 @@ namespace Okurleiga_hf
             NewRentWindow win = new NewRentWindow();
             win.ShowDialog();
         }
+        private void menu_NewEmployeeClick(object sender, RoutedEventArgs e)
+        {
+            NewEmployeeWindow win = new NewEmployeeWindow();
+            win.ShowDialog();
+        }
         private void menu_ViewApartmentClick(object sender, RoutedEventArgs e)
         {
             ViewApartmentWindow win = new ViewApartmentWindow();
@@ -107,5 +118,6 @@ namespace Okurleiga_hf
             ViewRentWindow win = new ViewRentWindow();
             win.ShowDialog();
         }
+
     }
 }

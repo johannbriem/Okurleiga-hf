@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\App.xaml
-12-996109079
-2-1881755278
-37-1686625335
-25370969452
-MainWindow.xaml;Windows\Change\ChangeApartmentIncidentWindow.xaml;Windows\New\NewApartmentIncidentWindow.xaml;Windows\New\NewApartmentOwnerWindow.xaml;Windows\New\NewApartmentWindow.xaml;Windows\New\NewCustomerWindow.xaml;Windows\New\NewRentWindow.xaml;Windows\View\ViewApartmentIncidentWindow.xaml;Windows\View\ViewApartmentOwnerWindow.xaml;Windows\View\ViewApartmentWindow.xaml;Windows\Change\ChangeCustomerWindow.xaml;Windows\View\ViewRentWindow.xaml;
+14-1117308323
 
-False
+29393773087
+25370969452
+MainWindow.xaml;Windows\Change\ChangeApartmentIncidentWindow.xaml;Windows\New\NewApartmentIncidentWindow.xaml;Windows\New\NewApartmentOwnerWindow.xaml;Windows\New\NewApartmentWindow.xaml;Windows\New\NewCustomerWindow.xaml;Windows\New\NewEmployeeWindow.xaml;Windows\New\NewRentWindow.xaml;Windows\View\ViewApartmentIncidentWindow.xaml;Windows\View\ViewApartmentOwnerWindow.xaml;Windows\View\ViewApartmentWindow.xaml;Windows\Change\ChangeCustomerWindow.xaml;Windows\View\ViewRentWindow.xaml;Windows\View\ViewWindow.xaml;
+
+True
 

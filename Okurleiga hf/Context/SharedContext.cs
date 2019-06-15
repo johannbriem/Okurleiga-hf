@@ -12,11 +12,11 @@ namespace Okurleiga_hf.Context
     {
         public static ApartmentDBContext dBContext = new ApartmentDBContext();
 
-        public static ObservableCollection<Apartment> apartments = new ObservableCollection<Apartment>();        
-        public static ObservableCollection<Customer> customers = new ObservableCollection<Customer>();
-        public static ObservableCollection<ApartmentIncident> apartmentIncidents = new ObservableCollection<ApartmentIncident>();        
-        public static ObservableCollection<Employee> employees = new ObservableCollection<Employee>();        
-        public static ObservableCollection<ApartmentOwner> apartmentOwners = new ObservableCollection<ApartmentOwner>();        
-        public static ObservableCollection<Rent> rents = new ObservableCollection<Rent>();
+        public static ObservableCollection<Apartment> Apartments = new ObservableCollection<Apartment>();
+        public static ObservableCollection<Customer> Customers = new ObservableCollection<Customer>();
+        public static ObservableCollection<ApartmentIncident> ApartmentIncidents = new ObservableCollection<ApartmentIncident>();
+        public static ObservableCollection<ApartmentOwner> ApartmentOwners = new ObservableCollection<ApartmentOwner>();
+        public static ObservableCollection<Rent> Rents = new ObservableCollection<Rent>();
+        public static ObservableCollection<Employee> Employees = new ObservableCollection<Employee>();
     }
 }

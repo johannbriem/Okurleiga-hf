@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,11 +9,11 @@ using Okurleiga_hf.Models;
 
 namespace Okurleiga_hf.Models
 {
-    class Apartment
+    class Apartment : DbContext
     {
 
         public int Id { get; set; }
-        public ApartmentOwner ApartmentOwner { get; set; }
+        public ApartmentOwner ApartmentOwner { get; set; }        
         public DateTime RegisteredAt { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
@@ -26,15 +27,15 @@ namespace Okurleiga_hf.Models
         public bool Garage { get; set; }
         public bool Smoking { get; set; }
         public bool Pet { get; set; }
-        public string Type { get; set; }
-        //public ObservableCollection<Rent> Rents { get; set; }
+        public string Type { get; set; }       
+        public ObservableCollection<ApartmentIncident> ApartmentIncidents { get; set; }
+        public ObservableCollection<Customer> Customers { get; set; }
 
-        //public Apartment()
-        //{
-        //    this.Rents = new ObservableCollection<Rent>();
-        //}
-
-
-
+        public Apartment()
+        {
+            this.ApartmentIncidents = new ObservableCollection<ApartmentIncident>();
+            this.Customers = new ObservableCollection<Customer>();
+           
+        }
     }
 }

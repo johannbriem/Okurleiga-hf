@@ -33,6 +33,11 @@
                             <materialDesign:PackIcon Kind="User"/>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem Header="Starfsmann..." Click="menu_NewEmployeeClick" >
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="User"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                     <MenuItem Header="Leigu..." Click="menu_NewRentClick">
                         <MenuItem.Icon>
                             <materialDesign:PackIcon Kind="FileDocument"/>
@@ -45,24 +50,24 @@
                     </MenuItem>
 
                 </MenuItem>
-            <MenuItem Header="Prenta...">
-                <MenuItem.Icon>
-                    <materialDesign:PackIcon Kind="Printer"/>
-                </MenuItem.Icon>
+                <MenuItem Header="Prenta...">
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Printer"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Vista..." >
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="ContentSave"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Hætta" Click="menu_QuitClick" >
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="WindowClose"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
-            <MenuItem Header="Vista..." >
-                <MenuItem.Icon>
-                    <materialDesign:PackIcon Kind="ContentSave"/>
-                </MenuItem.Icon>
-            </MenuItem>
-            <MenuItem Header="Hætta" Click="menu_QuitClick" >
-                <MenuItem.Icon>
-                    <materialDesign:PackIcon Kind="WindowClose"/>
-                </MenuItem.Icon>
-            </MenuItem>
-            </MenuItem>
-            
-            <!--<MenuItem Header="Breyta">
+
+            <MenuItem Header="Skoða">
                 <MenuItem Header="Húsnæði..." Click="menu_ViewApartmentClick">
                     <MenuItem.Icon>
                         <materialDesign:PackIcon Kind="House"/>
@@ -78,41 +83,19 @@
                         <materialDesign:PackIcon Kind="User"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Leigu..." Click="menu_NewRentClick">
+                <MenuItem Header="Leigu..." Click="menu_ViewRentClick" >
                     <MenuItem.Icon>
                         <materialDesign:PackIcon Kind="FileDocument"/>
                     </MenuItem.Icon>
-                </MenuItem>                
-            </MenuItem>-->
-
-            <MenuItem Header="Skoða">
-                <MenuItem Header="Húsnæði..." Click="menu_ViewApartmentClick">
-                <MenuItem.Icon>
-                    <materialDesign:PackIcon Kind="House"/>
-                </MenuItem.Icon>
-            </MenuItem>
-            <MenuItem Header="Eigendur..." Click="menu_ViewApartmentOwnersClick">
-            <MenuItem.Icon>
-                <materialDesign:PackIcon Kind="User"/>
-            </MenuItem.Icon>
-            </MenuItem>
-            <MenuItem Header="Leigjendur..." Click="menu_ViewCustomersClick">
-            <MenuItem.Icon>
-                <materialDesign:PackIcon Kind="User"/>
-            </MenuItem.Icon>
-            </MenuItem>
-            <MenuItem Header="Leigu..." Click="menu_ViewRentClick" >
-            <MenuItem.Icon>
-               <materialDesign:PackIcon Kind="FileDocument"/>
-            </MenuItem.Icon>
-            </MenuItem>
+                </MenuItem>
                 <MenuItem Header="Atvikalisti..." Click="menu_ViewApartmentIncidentsClick">
-            <MenuItem.Icon>
-                <materialDesign:PackIcon Kind="Wrench"/>
-            </MenuItem.Icon>
-            </MenuItem>
+                    <MenuItem.Icon>
+                        <materialDesign:PackIcon Kind="Wrench"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
+        <ListBox HorizontalAlignment="Left" Height="103" Margin="295,95,0,0" VerticalAlignment="Top" Width="93"/>
     </Grid>
 </Window>
 

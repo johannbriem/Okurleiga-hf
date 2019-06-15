@@ -6,6 +6,7 @@
         mc:Ignorable="d"
         Title="ViewRentWindow" Height="450" Width="800">
     <Grid>
-        
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="119,123,0,0" VerticalAlignment="Top" Width="100"  BorderBrush="Green" BorderThickness="5"/>
+
     </Grid>
 </Window>

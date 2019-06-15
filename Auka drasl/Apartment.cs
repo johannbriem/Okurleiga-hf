@@ -45,7 +45,6 @@ namespace Okurleiga_hf
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ApartmentOwner> ApartmentOwners { get; set; }
         public virtual ApartmentOwner ApartmentOwner { get; set; }
-        public virtual ApartmentOwner ApartmentOwner1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rent> Rents { get; set; }
     }

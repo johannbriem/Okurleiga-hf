@@ -17,24 +17,25 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="Auto" MinWidth="931"/>
+            <ColumnDefinition Width="927"/>
+            <ColumnDefinition Width="4"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Grid.Column="2" Margin="19,30,0,60"/>
-        <TextBlock Grid.Column="2" Margin="43,32,835,58" VerticalAlignment="Center" Height="16">Fornafn</TextBlock>
-        <TextBox Grid.Column="2" Margin="107,28,683,54" VerticalAlignment="Center" Height="24"></TextBox>
+        <TextBlock Grid.Column="2" Margin="43,32,831,58" VerticalAlignment="Center" Height="16">Fornafn</TextBlock>
+        <TextBox Grid.Column="2" Margin="107,28,679,54" VerticalAlignment="Center" Height="24" Text="{Binding FirstName}" ></TextBox>
         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Margin="19,60,0,30" Grid.Column="2"/>
-        <TextBlock Grid.Column="2" Margin="43,62,835,28" VerticalAlignment="Center" Height="16"><Run Text="Eftirnafn"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="107,58,683,24" VerticalAlignment="Center" Height="24"/>
+        <TextBlock Grid.Column="2" Margin="43,62,831,28" VerticalAlignment="Center" Height="16"><Run Text="Eftirnafn"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="107,58,679,24" VerticalAlignment="Center" Height="24" Text="{Binding LastName}"/>
         <materialDesign:PackIcon Kind="Numeric" VerticalAlignment="Center" Margin="19,90,0,0" Grid.Column="2"/>
-        <TextBlock Grid.Column="2" Margin="43,92,835,-2" VerticalAlignment="Center" Height="16"><Run Text="Kennitala"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="107,84,683,-2" VerticalAlignment="Center" Height="24"/>
+        <TextBlock Grid.Column="2" Margin="43,92,831,-2" VerticalAlignment="Center" Height="16"><Run Text="Kennitala"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="107,84,679,-2" VerticalAlignment="Center" Height="24" Text="{Binding SocialNumber}"/>
         <materialDesign:PackIcon Kind="Email" VerticalAlignment="Center" Margin="19,120,0,-30" Grid.Column="2"/>
-        <TextBlock Grid.Column="2" Margin="43,122,835,-32" VerticalAlignment="Center" Height="16"><Run Text="Netfang"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="107,114,683,-32" VerticalAlignment="Center" Height="24"/>
+        <TextBlock Grid.Column="2" Margin="43,122,831,-32" VerticalAlignment="Center" Height="16"><Run Text="Netfang"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="107,114,679,-32" VerticalAlignment="Center" Height="24" Text="{Binding Email}"/>
         <materialDesign:PackIcon Kind="Phone" VerticalAlignment="Center" Margin="19,150,0,-60" Grid.Column="2"/>
-        <TextBlock Grid.Column="2" Margin="43,152,835,-62" VerticalAlignment="Center" Height="16"><Run Text="Sími"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="107,144,683,-62" VerticalAlignment="Center" Height="24"/>
+        <TextBlock Grid.Column="2" Margin="43,152,831,-62" VerticalAlignment="Center" Height="16"><Run Text="Sími"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="107,144,679,-62" VerticalAlignment="Center" Height="24" Text="{Binding Phone}"/>
         <Button x:Name="btnSaveClick" Content="Vista" Grid.Column="2" HorizontalAlignment="Left" Margin="331,194,0,-120" VerticalAlignment="Top" Width="75" Click="BtnSaveClick_Click"/>
         <Button x:Name="btnQuitClick" Content="Hætta" Grid.Column="2" HorizontalAlignment="Left" Margin="234,194,0,-120" VerticalAlignment="Top" Width="75" Click="BtnQuitClick_Click"/>
     </Grid>

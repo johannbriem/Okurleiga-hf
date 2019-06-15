@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Okurleiga_hf.Context;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,13 @@ namespace Okurleiga_hf.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Notað til að loada töflunni uppúr gagnagrunninum.
+            CollectionViewSource view = new CollectionViewSource();
+            SharedContext.dBContext.Customers.Load();
+            SharedContext.Customers = SharedContext.dBContext.Customers.Local;
+
+            view.Source = SharedContext.Customers;
+            this.DataContext = view;
 
         }
 

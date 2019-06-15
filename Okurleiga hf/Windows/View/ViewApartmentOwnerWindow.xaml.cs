@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Okurleiga_hf.Context;
+using Okurleiga_hf.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +23,22 @@ namespace Okurleiga_hf.Windows
     /// </summary>
     public partial class ViewApartmentOwnerWindow : Window
     {
+        //ApartmentOwner ao;
+       
         public ViewApartmentOwnerWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            //SharedContext.dBContext.ApartmentOwners.Include(a => a.Apartments).Load();
+            //SharedContext.ApartmentOwners = SharedContext.dBContext.ApartmentOwners.Local;
+
+            //view.Source = SharedContext.ApartmentOwners;
+
+            //this.DataContext = view;
         }
     }
 }

@@ -12,7 +12,7 @@
         FontFamily="{StaticResource MaterialDesignFont}"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="NewApartmentOwnerWindow" Height="450" Width="800">
+        Title="Skrá nýjan eiganda" Height="422.283" Width="481.26" Loaded="Window_Loaded">
     <Grid VerticalAlignment="Top" Margin="16,16,16,0" Height="106">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -22,26 +22,31 @@
         </Grid.ColumnDefinitions>
         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Grid.Column="2" Margin="19,30,0,60"/>
         <TextBlock Grid.Column="2" Margin="43,32,835,58" VerticalAlignment="Center" Height="16">Fyrirtæki</TextBlock>
-        <TextBox Grid.Column="2" Margin="156,26,634,56" VerticalAlignment="Center" Height="24"></TextBox>
+        <TextBox Grid.Column="2" Margin="156,26,634,56" VerticalAlignment="Center" Height="24" Text="{Binding CompanyName}"></TextBox>
         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Margin="19,60,0,30" Grid.Column="2"/>
         <TextBlock Grid.Column="2" Margin="43,62,835,28" VerticalAlignment="Center" Height="16"><Run Text="Tengiliður Fornafn"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="156,56,634,26" VerticalAlignment="Center" Height="24"/>
-        <materialDesign:PackIcon Kind="Numeric" VerticalAlignment="Center" Margin="19,90,0,0" Grid.Column="2"/>
+        <TextBox Grid.Column="2" Margin="156,56,634,26" VerticalAlignment="Center" Height="24" Text="{Binding ContactFirstName}"/>
+        <materialDesign:PackIcon Kind="User" VerticalAlignment="Center" Margin="19,90,0,0" Grid.Column="2"/>
         <TextBlock Grid.Column="2" Margin="43,92,835,-2" VerticalAlignment="Center" Height="16"><Run Text="Tengiliður Eftirnafn"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="156,82,634,0" VerticalAlignment="Center" Height="24"/>
-        <materialDesign:PackIcon Kind="Email" VerticalAlignment="Center" Margin="19,120,0,-30" Grid.Column="2"/>
-        <TextBlock Grid.Column="2" Margin="43,122,835,-32" VerticalAlignment="Center" Height="16"><Run Text="Heimilisfang"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="156,112,634,-30" VerticalAlignment="Center" Height="24"/>
-        <materialDesign:PackIcon Kind="Phone" VerticalAlignment="Center" Margin="19,150,0,-60" Grid.Column="2"/>
-        <TextBlock Grid.Column="2" Margin="43,152,835,-62" VerticalAlignment="Center" Height="16"><Run Text="Borg"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="156,142,634,-60" VerticalAlignment="Center" Height="24"/>
-        <TextBlock Grid.Column="2" Margin="43,180,835,-90" VerticalAlignment="Center" Height="16"><Run Text="Póstnúmer"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="156,170,634,-88" VerticalAlignment="Center" Height="24"/>
-        <materialDesign:PackIcon Kind="Phone" VerticalAlignment="Center" Margin="19,208,0,-118" Grid.Column="2"/>
-        <TextBlock Grid.Column="2" Margin="43,210,835,-120" VerticalAlignment="Center" Height="16"><Run Text="Sími"/></TextBlock>
-        <TextBox Grid.Column="2" Margin="156,200,634,-118" VerticalAlignment="Center" Height="24"/>
-        <materialDesign:PackIcon Kind="Email" VerticalAlignment="Center" Margin="19,178,0,-88" Grid.Column="2"/>
-        <Button x:Name="btnSaveClick" Content="Vista" Grid.Column="2" HorizontalAlignment="Left" Margin="408,289,0,-215" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnQuitClick" Content="Hætta" Grid.Column="2" HorizontalAlignment="Left" Margin="311,289,0,-215" VerticalAlignment="Top" Width="75"/>
+        <TextBox Grid.Column="2" Margin="156,82,634,0" VerticalAlignment="Center" Height="24" Text="{Binding ContactLastName}"/>
+        <TextBox Grid.Column="2" Margin="156,111,634,-29" VerticalAlignment="Center" Height="24" Text="{Binding Email}"/>
+        <materialDesign:PackIcon Kind="UserAddress" VerticalAlignment="Center" Margin="19,119,0,-29" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="40,119,838,-29" VerticalAlignment="Center" Height="16"><Run Text="Email"/></TextBlock>
+        <materialDesign:PackIcon Kind="UserAddress" VerticalAlignment="Center" Margin="19,147,0,-57" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,152,835,-62" VerticalAlignment="Center" Height="16"><Run Text="Heimilisfang"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,139,634,-57" VerticalAlignment="Center" Height="24" Text="{Binding Address}"/>
+        <materialDesign:PackIcon Kind="City" VerticalAlignment="Center" Margin="19,177,0,-87" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,182,835,-92" VerticalAlignment="Center" Height="16"><Run Text="Borg"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,169,634,-87" VerticalAlignment="Center" Height="24" Text="{Binding City}"/>
+        <TextBlock Grid.Column="2" Margin="43,207,835,-117" VerticalAlignment="Center" Height="16"><Run Text="Póstnúmer"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,197,634,-115" VerticalAlignment="Center" Height="24" Text="{Binding Zip}"/>
+        <materialDesign:PackIcon Kind="Phone" VerticalAlignment="Center" Margin="19,235,0,-145" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,237,835,-147" VerticalAlignment="Center" Height="16"><Run Text="Sími"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,227,634,-145" VerticalAlignment="Center" Height="24" Text="{Binding Phone}"/>
+        <materialDesign:PackIcon Kind="Numeric" VerticalAlignment="Center" Margin="19,266,0,-176" Grid.Column="2" RenderTransformOrigin="0.062,4.375"/>
+        <TextBlock Grid.Column="2" Margin="43,266,831,-176" VerticalAlignment="Center" Height="16"><Run Text="Kennitala"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="156,258,630,-176" VerticalAlignment="Center" Height="24" Text="{Binding SocialNumber}"/>
+        <Button x:Name="btnSaveClick" Content="Vista" Grid.Column="2" HorizontalAlignment="Left" Margin="282,317,0,-243" VerticalAlignment="Top" Width="75" Click="BtnSaveClick_Click"/>
+        <Button x:Name="btnQuitClick" Content="Hætta" Grid.Column="2" HorizontalAlignment="Left" Margin="185,317,0,-243" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>

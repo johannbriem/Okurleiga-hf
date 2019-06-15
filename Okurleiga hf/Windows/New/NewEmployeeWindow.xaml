@@ -3,10 +3,52 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Okurleiga_hf.Windows.New"
+                TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{StaticResource MaterialDesignFont}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="NewEmployeeWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Skrá nýjan starfsmann" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid VerticalAlignment="Top" Margin="16,16,16,0" Height="106">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="927"/>
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Grid.Column="2" Margin="19,30,0,60"/>
+        <TextBlock Grid.Column="2" Margin="43,32,831,58" VerticalAlignment="Center" Height="16">Fornafn</TextBlock>
+        <TextBox Grid.Column="2" Margin="158,32,628,50" VerticalAlignment="Center" Height="24" Text="{Binding FirstName}" ></TextBox>
+        <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Margin="19,60,0,30" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,62,831,28" VerticalAlignment="Center" Height="16"><Run Text="Eftirnafn"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="158,62,628,20" VerticalAlignment="Center" Height="24" Text="{Binding LastName}"/>
+        <materialDesign:PackIcon Kind="Numeric" VerticalAlignment="Center" Margin="19,90,0,0" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,92,831,-2" VerticalAlignment="Center" Height="16"><Run Text="Kennitala"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="158,88,628,-6" VerticalAlignment="Center" Height="24" Text="{Binding SocialNumber}"/>
+        <materialDesign:PackIcon Kind="Email" VerticalAlignment="Center" Margin="19,120,0,-30" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,122,831,-32" VerticalAlignment="Center" Height="16"><Run Text="Netfang"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="158,118,628,-36" VerticalAlignment="Center" Height="24" Text="{Binding Email}"/>
+        <materialDesign:PackIcon Kind="Phone" VerticalAlignment="Center" Margin="19,150,0,-60" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,152,831,-62" VerticalAlignment="Center" Height="16"><Run Text="Sími"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="158,148,628,-66" VerticalAlignment="Center" Height="24" Text="{Binding Phone}"/>
+        <materialDesign:PackIcon Kind="UserAddress" VerticalAlignment="Center" Margin="15,178,0,-88" Grid.Column="2"/>
+        <TextBlock Grid.Column="2" Margin="43,178,811,-88" VerticalAlignment="Center" Height="16"><Run Text="Heimilisfang"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="158,174,628,-92" VerticalAlignment="Center" Height="24" Text="{Binding Address}"/>
+        <materialDesign:PackIcon Kind="City" VerticalAlignment="Center" Margin="15,203,0,-113" Grid.Column="2" Width="18"/>
+        <TextBlock Grid.Column="2" Margin="43,207,835,-117" VerticalAlignment="Center" Height="16"><Run Text="Borg"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="158,203,628,-121" VerticalAlignment="Center" Height="24" Text="{Binding City}"/>
+        <TextBlock Grid.Column="2" Margin="43,239,811,-149" VerticalAlignment="Center" Height="16"><Run Text="Póstnúmer"/></TextBlock>
+        <TextBox Grid.Column="2" Margin="158,231,628,-149" VerticalAlignment="Center" Height="24" Text="{Binding Zip}"/>
+        <materialDesign:PackIcon Kind="Phone" VerticalAlignment="Center" Margin="17,239,0,-149" Grid.Column="2"/>
+        <materialDesign:PackIcon Kind="DateRange" VerticalAlignment="Center" Margin="17,266,0,-176" Grid.Column="2" Width="18"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="43,266,0,-176" TextWrapping="Wrap" Text="Dags. Ráðningar" VerticalAlignment="Top"/>
+        <DatePicker Grid.Column="2" HorizontalAlignment="Left" Height="22" Margin="158,260,0,-176" VerticalAlignment="Top" Width="141" Text="{Binding DateStart}"/>
+        <Button x:Name="btnSaveClick" Content="Vista" Grid.Column="2" HorizontalAlignment="Left" Margin="626,285,0,-211" VerticalAlignment="Top" Width="75" Click="BtnSaveClick_Click"/>
+        <Button x:Name="btnQuitClick" Content="Hætta" Grid.Column="2" HorizontalAlignment="Left" Margin="529,285,0,-211" VerticalAlignment="Top" Width="75" Click="BtnQuitClick_Click"/>
     </Grid>
 </Window>

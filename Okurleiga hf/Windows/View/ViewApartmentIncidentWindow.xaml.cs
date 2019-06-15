@@ -1,5 +1,10 @@
-﻿using System;
+﻿using Okurleiga_hf.Context;
+using Okurleiga_hf.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity.Core.Objects;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +27,11 @@ namespace Okurleiga_hf.Windows
         public ViewApartmentIncidentWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

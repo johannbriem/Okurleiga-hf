@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Okurleiga_hf.Windows"
         mc:Ignorable="d"
-        Title="ViewApartmentIncidentWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Atvikalisti" Height="407.813" Width="690" Loaded="Window_Loaded">
+    <Grid x:Name="Grid1">
+        <ListView Name="ListViewIncidentDetails" Margin="4,20,0,10">
+            <ListView.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Gray" Offset="0"/>
+                </LinearGradientBrush>
+            </ListView.Background>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Incident ID" DisplayMemberBinding="{Binding Path=Id}"/>
+                    <GridViewColumn Header="Apartment" DisplayMemberBinding="{Binding Path=Apartment}"/>
+                    <GridViewColumn Header="Skráð" DisplayMemberBinding="{Binding Path=RegisterDate}"/>
+                    <GridViewColumn Header="Info" DisplayMemberBinding="{Binding Path=IncidentInfo}"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Path=Status}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

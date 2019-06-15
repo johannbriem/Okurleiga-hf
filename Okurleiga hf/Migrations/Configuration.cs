@@ -1,10 +1,11 @@
 namespace Okurleiga_hf.Migrations
 {
-    
+    using Okurleiga_hf.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    //using Okurleiga_hf.Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Okurleiga_hf.Context.ApartmentDBContext>
     {
@@ -58,176 +59,13 @@ namespace Okurleiga_hf.Migrations
             };
 
             context.Employees.AddOrUpdate(
-                x => new { x.FirstName, x.LastName },
+                e => new { e.FirstName, e.LastName },
                 e1,
                 e2,
                 e3               
                 );
 
-            context.SaveChanges();
-
-            Customer c1 = new Customer()
-            {
-                FirstName = "Sunna",
-                LastName = "Gunnarsdóttir",
-                SocialNumber = "030489 - 4354",
-                Email = "sunnarg@gmail.com",
-                Phone = "867-3243"
-            };
-
-            Customer c2 = new Customer()
-            {
-                FirstName = "Björn",
-                LastName = "Jónsson",
-                SocialNumber = "0812879 - 5354",
-                Email = "bjossi@kraftur.com",
-                Phone = "867-3443"
-            };
-
-            Customer c3 = new Customer()
-            {
-                FirstName = "Þórey",
-                LastName = "Harðardóttir",
-                SocialNumber = "030869 - 2359",
-                Email = "totag@simnet.is",
-                Phone = "878-3289"
-            };
-
-            Customer c4 = new Customer()
-            {
-                FirstName = "Óskar Þór",
-                LastName = "Hermansson",
-                SocialNumber = "240490 - 4359",
-                Email = "skari@gmail.com",
-                Phone = "854-3243"
-            };
-
-            context.Customers.AddOrUpdate(
-                x => new { x.FirstName, x.LastName },
-                c1,
-                c2,
-                c3,
-                c4
-                );
-
-            context.SaveChanges();
-
-            Apartment a1 = new Apartment()
-            {
-                RegisteredAt = new DateTime(2018, 11, 03),
-                Address = "Skólavegur 3",
-                City = "Reykjavík",
-                Zip = 201,
-                Bedroom = 3,
-                Bathroom = 1,
-                Size = 110,
-                RentPrize = 180000,
-                Available = true,
-                RentType = "Langtíma",
-                Garage = false,
-                Smoking = false,
-                Pet = true,
-                Type = "Parhús"
-            };
-
-            Apartment a2 = new Apartment()
-            {
-                RegisteredAt = new DateTime(2018, 08, 03),
-                Address = "Garðatorg 3",
-                City = "Keflavík",
-                Zip = 112,
-                Bedroom = 5,
-                Bathroom = 2,
-                Size = 210,
-                RentPrize = 280000,
-                Available = false,
-                RentType = "Langtíma",
-                Garage = true,
-                Smoking = false,
-                Pet = true,
-                Type = "Einbýli"
-            };
-
-            Apartment a3 = new Apartment()
-            {
-                RegisteredAt = new DateTime(2019, 01, 03),
-                Address = "Kelduskógar 8",
-                City = "Egilsstaðir",
-                Zip = 700,
-                Bedroom = 3,
-                Bathroom = 1,
-                Size = 150,
-                RentPrize = 130000,
-                Available = true,
-                RentType = "Langtíma",
-                Garage = false,
-                Smoking = false,
-                Pet = false,
-                Type = "Tvíbýli"
-            };
-
-            Apartment a4 = new Apartment()
-            {
-                RegisteredAt = new DateTime(2017, 10, 13),
-                Address = "Gunnarsbraut 7",
-                City = "Reykjavík",
-                Zip = 221,
-                Bedroom = 2,
-                Bathroom = 1,
-                Size = 90,
-                RentPrize = 110000,
-                Available = false,
-                RentType = "Skammtíma",
-                Garage = false,
-                Smoking = false,
-                Pet = false,
-                Type = "Parhús"
-            };
-
-            Apartment a5 = new Apartment()
-            {
-                RegisteredAt = new DateTime(2018, 11, 03),
-                Address = "Skólastígur 21",
-                City = "Njarðvík",
-                Zip = 301,
-                Bedroom = 3,
-                Bathroom = 1,
-                Size = 130,
-                RentPrize = 180000,
-                Available = true,
-                RentType = "Langtíma",
-                Garage = true,
-                Smoking = false,
-                Pet = false,
-                Type = "Einbýli"
-            };
-
-            context.Apartments.AddOrUpdate(
-                x => new { x.Address, x.City },
-                a1,
-                a2,
-                a3,
-                a4,
-                a5
-                );
-            
-            context.SaveChanges();
-
-            ApartmentIncident ai1 = new ApartmentIncident()
-            {                
-                RegisterDate = new DateTime(2018, 01, 02),
-                RegisterName = "Gunnar Þór Jónsson",
-                IncidentInfo = "Bilaður ofn inní stofu",
-                Status = true,
-                ContractorWhoFixed = "Gulli Byggir"
-            };
-
-            context.ApartmentIncidents.AddOrUpdate(
-                x => x.IncidentInfo,
-                 ai1
-                 );
-
-            context.SaveChanges();
+            context.SaveChanges();                    
             
             ApartmentOwner ao1 = new ApartmentOwner()
             {                
@@ -263,27 +101,189 @@ namespace Okurleiga_hf.Migrations
                 Zip = 241,
                 Email = "adalheidur@dhl.is",
                 Phone = "865-2365"
+                
             };
                         
+            context.SaveChanges();
+
             context.ApartmentOwners.AddOrUpdate(
-                x => x.CompanyName,
+                ao => ao.CompanyName,
                 ao1,
                 ao2,
                 ao3
+                );          
+
+            Apartment a1 = new Apartment()
+            {
+                RegisteredAt = new DateTime(2018, 11, 03),
+                Address = "Skólavegur 3",
+                City = "Reykjavík",
+                Zip = 201,
+                Bedroom = 3,
+                Bathroom = 1,
+                Size = 110,
+                RentPrize = 180000,
+                Available = true,
+                RentType = "Langtíma",
+                Garage = false,
+                Smoking = false,
+                Pet = true,
+                Type = "Parhús",
+                ApartmentOwner = ao2,                
+            };
+
+            Apartment a2 = new Apartment()
+            {
+                RegisteredAt = new DateTime(2018, 08, 03),
+                Address = "Garðatorg 3",
+                City = "Keflavík",
+                Zip = 112,
+                Bedroom = 5,
+                Bathroom = 2,
+                Size = 210,
+                RentPrize = 280000,
+                Available = false,
+                RentType = "Langtíma",
+                Garage = true,
+                Smoking = false,
+                Pet = true,
+                Type = "Einbýli",
+                ApartmentOwner = ao3,                
+            };
+
+            Apartment a3 = new Apartment()
+            {
+                RegisteredAt = new DateTime(2019, 01, 03),
+                Address = "Kelduskógar 8",
+                City = "Egilsstaðir",
+                Zip = 700,
+                Bedroom = 3,
+                Bathroom = 1,
+                Size = 150,
+                RentPrize = 130000,
+                Available = true,
+                RentType = "Langtíma",
+                Garage = false,
+                Smoking = false,
+                Pet = false,
+                Type = "Tvíbýli",
+                ApartmentOwner = ao2
+            };
+
+            Apartment a4 = new Apartment()
+            {
+                RegisteredAt = new DateTime(2017, 10, 13),
+                Address = "Gunnarsbraut 7",
+                City = "Reykjavík",
+                Zip = 221,
+                Bedroom = 2,
+                Bathroom = 1,
+                Size = 90,
+                RentPrize = 110000,
+                Available = false,
+                RentType = "Skammtíma",
+                Garage = false,
+                Smoking = false,
+                Pet = false,
+                Type = "Parhús",
+                ApartmentOwner = ao1,                
+            };
+
+            Apartment a5 = new Apartment()
+            {
+                RegisteredAt = new DateTime(2018, 11, 03),
+                Address = "Skólastígur 21",
+                City = "Njarðvík",
+                Zip = 301,
+                Bedroom = 3,
+                Bathroom = 1,
+                Size = 130,
+                RentPrize = 180000,
+                Available = true,
+                RentType = "Langtíma",
+                Garage = true,
+                Smoking = false,
+                Pet = false,
+                Type = "Einbýli",
+                ApartmentOwner = ao1,                
+            };
+
+            context.Apartments.AddOrUpdate(
+                a => new { a.Address, a.City },
+                a1,
+                a2,
+                a3,
+                a4,
+                a5
                 );
-            //context.ApartmentOwners.Include(x => x.Apartment).ToArray();
-            context.SaveChanges();
-
-
-            //ao1.Apartment = a1;
-            //ai1.Apartment = a1;
-
-
-
 
             context.SaveChanges();
 
+            Customer c1 = new Customer()
+            {
+                FirstName = "Sunna",
+                LastName = "Gunnarsdóttir",
+                SocialNumber = "030489 - 4354",
+                Email = "sunnarg@gmail.com",
+                Phone = "867-3243",
+                Apartment = a1
+            };
 
+            Customer c2 = new Customer()
+            {
+                FirstName = "Björn",
+                LastName = "Jónsson",
+                SocialNumber = "0812879 - 5354",
+                Email = "bjossi@kraftur.com",
+                Phone = "867-3443",
+                Apartment = a2
+            };
+
+            Customer c3 = new Customer()
+            {
+                FirstName = "Þórey",
+                LastName = "Harðardóttir",
+                SocialNumber = "030869 - 2359",
+                Email = "totag@simnet.is",
+                Phone = "878-3289",
+                Apartment = a3
+            };
+
+            Customer c4 = new Customer()
+            {
+                FirstName = "Óskar Þór",
+                LastName = "Hermansson",
+                SocialNumber = "240490 - 4359",
+                Email = "skari@gmail.com",
+                Phone = "854-3243",
+                Apartment = a4
+            };
+
+            context.Customers.AddOrUpdate(
+                c => new { c.FirstName, c.LastName },
+                c1,
+                c2,
+                c3,
+                c4
+                );
+
+            context.SaveChanges();
+
+            ApartmentIncident ai1 = new ApartmentIncident()
+            {
+                RegisterDate = new DateTime(2018, 01, 02),
+                RegisterName = "Gunnar Þór Jónsson",
+                IncidentInfo = "Bilaður ofn inní stofu",
+                Status = "Nýskráning",
+                ContractorWhoFixed = "Gulli Byggir",
+                Apartment = a1
+            };
+            context.ApartmentIncidents.AddOrUpdate(
+                ai => ai.IncidentInfo,
+                 ai1
+                 );
+
+            context.SaveChanges();
         }
     }
 }

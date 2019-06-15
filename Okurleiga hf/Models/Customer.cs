@@ -11,7 +11,8 @@ namespace Okurleiga_hf.Models
 {
     class Customer : INotifyPropertyChanged
     {
-        public int CustomerID { get; set; }
+        public int Id { get; set; }
+        public Apartment Apartment { get; set; }        
 
         private string _firstName;
 

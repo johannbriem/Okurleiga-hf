@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="Okurleiga_hf.Context.ApartmentDBContextModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="C__MigrationHistory">
-    <Key>
-      <PropertyRef Name="MigrationId" />
-      <PropertyRef Name="ContextKey" />
-    </Key>
-    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
-  </EntityType>
   <EntityType Name="ApartmentIncident">
     <Key>
       <PropertyRef Name="Id" />
@@ -18,7 +8,7 @@
     <Property Name="RegisterDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="RegisterName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="IncidentInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ContractorWhoFixed" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Apartment_Id" Type="Int32" />
     <NavigationProperty Name="Apartment" Relationship="Self.FK_dbo_ApartmentIncidents_dbo_Apartments_Apartment_Id" FromRole="ApartmentIncidents" ToRole="Apartments" />
@@ -36,10 +26,7 @@
     <Property Name="Zip" Type="Int32" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Apartment_Id" Type="Int32" />
-    <NavigationProperty Name="Apartment" Relationship="Self.FK_dbo_ApartmentOwners_dbo_Apartments_Apartment_Id" FromRole="ApartmentOwners" ToRole="Apartments" />
     <NavigationProperty Name="Apartments" Relationship="Self.FK_dbo_Apartments_dbo_ApartmentOwners_ApartmentOwner_Id" FromRole="ApartmentOwners" ToRole="Apartments" />
-    <NavigationProperty Name="Apartments1" Relationship="Self.FK_dbo_Apartments_dbo_ApartmentOwners_Owner_Id" FromRole="ApartmentOwners" ToRole="Apartments" />
   </EntityType>
   <EntityType Name="Apartment">
     <Key>
@@ -61,30 +48,27 @@
     <Property Name="Pet" Type="Boolean" Nullable="false" />
     <Property Name="Type" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="ApartmentOwner_Id" Type="Int32" />
-    <Property Name="Owner_Id" Type="Int32" />
     <NavigationProperty Name="ApartmentIncidents" Relationship="Self.FK_dbo_ApartmentIncidents_dbo_Apartments_Apartment_Id" FromRole="Apartments" ToRole="ApartmentIncidents" />
-    <NavigationProperty Name="ApartmentOwners" Relationship="Self.FK_dbo_ApartmentOwners_dbo_Apartments_Apartment_Id" FromRole="Apartments" ToRole="ApartmentOwners" />
     <NavigationProperty Name="ApartmentOwner" Relationship="Self.FK_dbo_Apartments_dbo_ApartmentOwners_ApartmentOwner_Id" FromRole="Apartments" ToRole="ApartmentOwners" />
-    <NavigationProperty Name="ApartmentOwner1" Relationship="Self.FK_dbo_Apartments_dbo_ApartmentOwners_Owner_Id" FromRole="Apartments" ToRole="ApartmentOwners" />
     <NavigationProperty Name="Rents" Relationship="Self.FK_dbo_Rents_dbo_Apartments_Apartment_Id" FromRole="Apartments" ToRole="Rents" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
-      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="SocialNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Rents" Relationship="Self.FK_dbo_Rents_dbo_Customers_Customer_CustomerID" FromRole="Customers" ToRole="Rents" />
+    <NavigationProperty Name="Rents" Relationship="Self.FK_dbo_Rents_dbo_Customers_Customer_Id" FromRole="Customers" ToRole="Rents" />
   </EntityType>
   <EntityType Name="Employee">
     <Key>
-      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="SocialNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
@@ -93,7 +77,7 @@
     <Property Name="Zip" Type="Int32" Nullable="false" />
     <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DateStart" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="Rents" Relationship="Self.FK_dbo_Rents_dbo_Employees_Employee_EmployeeID" FromRole="Employees" ToRole="Rents" />
+    <NavigationProperty Name="Rents" Relationship="Self.FK_dbo_Rents_dbo_Employees_Employee_Id" FromRole="Employees" ToRole="Rents" />
   </EntityType>
   <EntityType Name="Rent">
     <Key>
@@ -102,11 +86,11 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RentDate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="Apartment_Id" Type="Int32" />
-    <Property Name="Customer_CustomerID" Type="Int32" />
-    <Property Name="Employee_EmployeeID" Type="Int32" />
+    <Property Name="Customer_Id" Type="Int32" />
+    <Property Name="Employee_Id" Type="Int32" />
     <NavigationProperty Name="Apartment" Relationship="Self.FK_dbo_Rents_dbo_Apartments_Apartment_Id" FromRole="Rents" ToRole="Apartments" />
-    <NavigationProperty Name="Customer" Relationship="Self.FK_dbo_Rents_dbo_Customers_Customer_CustomerID" FromRole="Rents" ToRole="Customers" />
-    <NavigationProperty Name="Employee" Relationship="Self.FK_dbo_Rents_dbo_Employees_Employee_EmployeeID" FromRole="Rents" ToRole="Employees" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_dbo_Rents_dbo_Customers_Customer_Id" FromRole="Rents" ToRole="Customers" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_dbo_Rents_dbo_Employees_Employee_Id" FromRole="Rents" ToRole="Employees" />
   </EntityType>
   <Association Name="FK_dbo_ApartmentIncidents_dbo_Apartments_Apartment_Id">
     <End Role="Apartments" Type="Self.Apartment" Multiplicity="0..1" />
@@ -116,18 +100,6 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="ApartmentIncidents">
-        <PropertyRef Name="Apartment_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_dbo_ApartmentOwners_dbo_Apartments_Apartment_Id">
-    <End Role="Apartments" Type="Self.Apartment" Multiplicity="0..1" />
-    <End Role="ApartmentOwners" Type="Self.ApartmentOwner" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Apartments">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ApartmentOwners">
         <PropertyRef Name="Apartment_Id" />
       </Dependent>
     </ReferentialConstraint>
@@ -144,18 +116,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_dbo_Apartments_dbo_ApartmentOwners_Owner_Id">
-    <End Role="ApartmentOwners" Type="Self.ApartmentOwner" Multiplicity="0..1" />
-    <End Role="Apartments" Type="Self.Apartment" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="ApartmentOwners">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Apartments">
-        <PropertyRef Name="Owner_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_dbo_Rents_dbo_Apartments_Apartment_Id">
     <End Role="Apartments" Type="Self.Apartment" Multiplicity="0..1" />
     <End Role="Rents" Type="Self.Rent" Multiplicity="*" />
@@ -168,32 +128,31 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_dbo_Rents_dbo_Customers_Customer_CustomerID">
+  <Association Name="FK_dbo_Rents_dbo_Customers_Customer_Id">
     <End Role="Customers" Type="Self.Customer" Multiplicity="0..1" />
     <End Role="Rents" Type="Self.Rent" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Customers">
-        <PropertyRef Name="CustomerID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Rents">
-        <PropertyRef Name="Customer_CustomerID" />
+        <PropertyRef Name="Customer_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_dbo_Rents_dbo_Employees_Employee_EmployeeID">
+  <Association Name="FK_dbo_Rents_dbo_Employees_Employee_Id">
     <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
     <End Role="Rents" Type="Self.Rent" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
-        <PropertyRef Name="EmployeeID" />
+        <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Rents">
-        <PropertyRef Name="Employee_EmployeeID" />
+        <PropertyRef Name="Employee_Id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+  <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ApartmentIncidents" EntityType="Self.ApartmentIncident" />
     <EntitySet Name="ApartmentOwners" EntityType="Self.ApartmentOwner" />
     <EntitySet Name="Apartments" EntityType="Self.Apartment" />
@@ -204,15 +163,7 @@
       <End Role="Apartments" EntitySet="Apartments" />
       <End Role="ApartmentIncidents" EntitySet="ApartmentIncidents" />
     </AssociationSet>
-    <AssociationSet Name="FK_dbo_ApartmentOwners_dbo_Apartments_Apartment_Id" Association="Self.FK_dbo_ApartmentOwners_dbo_Apartments_Apartment_Id">
-      <End Role="Apartments" EntitySet="Apartments" />
-      <End Role="ApartmentOwners" EntitySet="ApartmentOwners" />
-    </AssociationSet>
     <AssociationSet Name="FK_dbo_Apartments_dbo_ApartmentOwners_ApartmentOwner_Id" Association="Self.FK_dbo_Apartments_dbo_ApartmentOwners_ApartmentOwner_Id">
-      <End Role="ApartmentOwners" EntitySet="ApartmentOwners" />
-      <End Role="Apartments" EntitySet="Apartments" />
-    </AssociationSet>
-    <AssociationSet Name="FK_dbo_Apartments_dbo_ApartmentOwners_Owner_Id" Association="Self.FK_dbo_Apartments_dbo_ApartmentOwners_Owner_Id">
       <End Role="ApartmentOwners" EntitySet="ApartmentOwners" />
       <End Role="Apartments" EntitySet="Apartments" />
     </AssociationSet>
@@ -220,11 +171,11 @@
       <End Role="Apartments" EntitySet="Apartments" />
       <End Role="Rents" EntitySet="Rents" />
     </AssociationSet>
-    <AssociationSet Name="FK_dbo_Rents_dbo_Customers_Customer_CustomerID" Association="Self.FK_dbo_Rents_dbo_Customers_Customer_CustomerID">
+    <AssociationSet Name="FK_dbo_Rents_dbo_Customers_Customer_Id" Association="Self.FK_dbo_Rents_dbo_Customers_Customer_Id">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Rents" EntitySet="Rents" />
     </AssociationSet>
-    <AssociationSet Name="FK_dbo_Rents_dbo_Employees_Employee_EmployeeID" Association="Self.FK_dbo_Rents_dbo_Employees_Employee_EmployeeID">
+    <AssociationSet Name="FK_dbo_Rents_dbo_Employees_Employee_Id" Association="Self.FK_dbo_Rents_dbo_Employees_Employee_Id">
       <End Role="Employees" EntitySet="Employees" />
       <End Role="Rents" EntitySet="Rents" />
     </AssociationSet>
