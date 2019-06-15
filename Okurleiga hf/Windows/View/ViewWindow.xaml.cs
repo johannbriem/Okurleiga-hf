@@ -40,5 +40,30 @@ namespace Okurleiga_hf.Windows.View
             /* Hérna langar mig til að birta uppls um alla þá dálka sem eru í þessum töflum hérna undir models ->
              * Byggt á því hvað er valið í Comboboxinu og svo bara breytt og eytt því sem er valið hérna inni Datagrid.*/
         }
+
+        private void menu_ButtonSaveClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void menu_ButtonQuitClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void menu_ButtonChangeClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void menu_ButtonDeleteClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void menu_ButtonEditClick(object sender, DataGridBeginningEditEventArgs e)
+        {
+
+        }
     }
 }

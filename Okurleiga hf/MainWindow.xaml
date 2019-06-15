@@ -100,7 +100,6 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <ListBox HorizontalAlignment="Left" Height="266" Margin="230,75,0,0" VerticalAlignment="Top" Width="375" SelectedValuePath="Id" ItemsSource="{Binding}" DisplayMemberPath="FirstName"/>
     </Grid>
 </Window>
 

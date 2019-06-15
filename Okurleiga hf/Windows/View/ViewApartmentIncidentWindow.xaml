@@ -1,27 +1,33 @@
-﻿<Window x:Class="Okurleiga_hf.Windows.ViewApartmentIncidentWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Okurleiga_hf.Windows"
+        xmlns:Okurleiga_hf="clr-namespace:Okurleiga_hf" x:Class="Okurleiga_hf.Windows.ViewApartmentIncidentWindow"
         mc:Ignorable="d"
         Title="Atvikalisti" Height="407.813" Width="690" Loaded="Window_Loaded">
-    <Grid x:Name="Grid1">
-        <ListView Name="ListViewIncidentDetails" Margin="4,20,0,10">
-            <ListView.Background>
-                <LinearGradientBrush>
-                    <GradientStop Color="Gray" Offset="0"/>
-                </LinearGradientBrush>
-            </ListView.Background>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Incident ID" DisplayMemberBinding="{Binding Path=Id}"/>
-                    <GridViewColumn Header="Apartment" DisplayMemberBinding="{Binding Path=Apartment}"/>
-                    <GridViewColumn Header="Skráð" DisplayMemberBinding="{Binding Path=RegisterDate}"/>
-                    <GridViewColumn Header="Info" DisplayMemberBinding="{Binding Path=IncidentInfo}"/>
-                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Path=Status}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+    <Window.Resources>
+        <Okurleiga_hf:OkurleigaDataSet x:Key="okurleigaDataSet"/>
+        <CollectionViewSource x:Key="apartmentIncidentsViewSource" Source="{Binding ApartmentIncidents, Source={StaticResource okurleigaDataSet}}"/>
+    </Window.Resources>
+    <Grid x:Name="Grid1" DataContext="{StaticResource apartmentIncidentsViewSource}">
+        <DataGrid x:Name="apartmentIncidentsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="87,27,20,47" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="registerDateColumn" Header="Register Date" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding RegisterDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="registerNameColumn" Binding="{Binding RegisterName}" Header="Register Name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="incidentInfoColumn" Binding="{Binding IncidentInfo}" Header="Incident Info" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="statusColumn" Binding="{Binding Status}" Header="Status" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="contractorWhoFixedColumn" Binding="{Binding ContractorWhoFixed}" Header="Contractor Who Fixed" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="apartment_IdColumn" Binding="{Binding Apartment_Id}" Header="Apartment Id" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

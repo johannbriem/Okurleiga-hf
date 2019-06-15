@@ -31,7 +31,13 @@ namespace Okurleiga_hf.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            
+
+            Okurleiga_hf.OkurleigaDataSet okurleigaDataSet = ((Okurleiga_hf.OkurleigaDataSet)(this.FindResource("okurleigaDataSet")));
+            // Load data into the table ApartmentIncidents. You can modify this code as needed.
+            Okurleiga_hf.OkurleigaDataSetTableAdapters.ApartmentIncidentsTableAdapter okurleigaDataSetApartmentIncidentsTableAdapter = new Okurleiga_hf.OkurleigaDataSetTableAdapters.ApartmentIncidentsTableAdapter();
+            okurleigaDataSetApartmentIncidentsTableAdapter.Fill(okurleigaDataSet.ApartmentIncidents);
+            System.Windows.Data.CollectionViewSource apartmentIncidentsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("apartmentIncidentsViewSource")));
+            apartmentIncidentsViewSource.View.MoveCurrentToFirst();
         }
     }
 }
