@@ -27,13 +27,13 @@ namespace Okurleiga_hf.Windows.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-
-                        Okurleiga_hf.OkurleigaDataSet okurleigaDataSet = ((Okurleiga_hf.OkurleigaDataSet)(this.FindResource("okurleigaDataSet")));
+            Okurleiga_hf.OkurleigaDataSet okurleigaDataSet = ((Okurleiga_hf.OkurleigaDataSet)(this.FindResource("okurleigaDataSet")));
             // Load data into the table Apartments. You can modify this code as needed.
             Okurleiga_hf.OkurleigaDataSetTableAdapters.ApartmentsTableAdapter okurleigaDataSetApartmentsTableAdapter = new Okurleiga_hf.OkurleigaDataSetTableAdapters.ApartmentsTableAdapter();
             okurleigaDataSetApartmentsTableAdapter.Fill(okurleigaDataSet.Apartments);
             System.Windows.Data.CollectionViewSource apartmentsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("apartmentsViewSource")));
             apartmentsViewSource.View.MoveCurrentToFirst();
+
         }
 
         //void DataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -85,6 +85,11 @@ namespace Okurleiga_hf.Windows.View
         private void menu_ButtonEditClick(object sender, DataGridBeginningEditEventArgs e)
         {
 
+        }
+
+        private void CbModels_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
         }
     }
 }
