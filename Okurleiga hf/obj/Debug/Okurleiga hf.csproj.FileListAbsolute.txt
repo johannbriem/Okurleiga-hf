@@ -56,3 +56,6 @@ C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.cs
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csproj.CopyComplete
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.exe
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.pdb
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewWindow.g.cs
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewWindow.baml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\GeneratedInternalTypeHelper.g.cs

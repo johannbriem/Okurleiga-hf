@@ -1,9 +1,10 @@
-﻿<Window x:Class="Okurleiga_hf.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Okurleiga_hf" x:Class="Okurleiga_hf.MainWindow"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -13,7 +14,11 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         Title="Okurleiga hf." Height="450" Width="800" Loaded="Window_Loaded">
-    <Grid>
+    <Window.Resources>
+        <local:OkurleigaDataSet x:Key="okurleigaDataSet"/>
+        <CollectionViewSource x:Key="employeesViewSource" Source="{Binding Employees, Source={StaticResource okurleigaDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource employeesViewSource}">
         <Menu Height="Auto" VerticalAlignment="Top">
 
             <MenuItem Header="Skrá">
@@ -95,7 +100,7 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <ListBox HorizontalAlignment="Left" Height="103" Margin="295,95,0,0" VerticalAlignment="Top" Width="93"/>
+        <ListBox HorizontalAlignment="Left" Height="266" Margin="230,75,0,0" VerticalAlignment="Top" Width="375" SelectedValuePath="Id" ItemsSource="{Binding}" DisplayMemberPath="FirstName"/>
     </Grid>
 </Window>
 

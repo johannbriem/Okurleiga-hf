@@ -45,10 +45,16 @@ namespace Okurleiga_hf
             SharedContext.ApartmentOwners = SharedContext.dBContext.ApartmentOwners.Local;
             SharedContext.Employees = SharedContext.dBContext.Employees.Local;
 
-            
-            
 
-            
+
+
+
+            Okurleiga_hf.OkurleigaDataSet okurleigaDataSet = ((Okurleiga_hf.OkurleigaDataSet)(this.FindResource("okurleigaDataSet")));
+            // Load data into the table Employees. You can modify this code as needed.
+            Okurleiga_hf.OkurleigaDataSetTableAdapters.EmployeesTableAdapter okurleigaDataSetEmployeesTableAdapter = new Okurleiga_hf.OkurleigaDataSetTableAdapters.EmployeesTableAdapter();
+            okurleigaDataSetEmployeesTableAdapter.Fill(okurleigaDataSet.Employees);
+            System.Windows.Data.CollectionViewSource employeesViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("employeesViewSource")));
+            employeesViewSource.View.MoveCurrentToFirst();
         }
 
         private void menu_NewCustomerClick(object sender, RoutedEventArgs e)
@@ -91,7 +97,7 @@ namespace Okurleiga_hf
         }
         private void menu_ViewApartmentClick(object sender, RoutedEventArgs e)
         {
-            ViewApartmentWindow win = new ViewApartmentWindow();
+            ViewWindow win = new ViewWindow();
             win.ShowDialog();
         }
 
@@ -119,5 +125,9 @@ namespace Okurleiga_hf
             win.ShowDialog();
         }
 
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
