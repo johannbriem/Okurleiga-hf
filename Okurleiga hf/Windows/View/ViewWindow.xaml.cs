@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Okurleiga_hf.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,11 +36,25 @@ namespace Okurleiga_hf.Windows.View
             apartmentsViewSource.View.MoveCurrentToFirst();
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            /* Hérna langar mig til að birta uppls um alla þá dálka sem eru í þessum töflum hérna undir models ->
-             * Byggt á því hvað er valið í Comboboxinu og svo bara breytt og eytt því sem er valið hérna inni Datagrid.*/
-        }
+        //void DataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
+        //{
+        //    DataGrid dg = sender as DataGrid;
+        //    if (dg != null)
+        //    {
+        //        DataGridRow dgr = (DataGridRow)(dg.ItemContainerGenerator.ContainerFromIndex(dg.SelectedIndex));
+        //        if (e.Key == Key.Delete && !dgr.IsEditing)
+        //        {
+        //            // User is attempting to delete the row
+        //            var result = MessageBox.Show(
+        //                "About to delete the current row.\n\nProceed?",
+        //                "Delete",
+        //                MessageBoxButton.YesNo,
+        //                MessageBoxImage.Question,
+        //                MessageBoxResult.No);
+        //            e.Handled = (result == MessageBoxResult.No);
+        //        }
+        //    }
+        //}
 
         private void menu_ButtonSaveClick(object sender, RoutedEventArgs e)
         {
@@ -58,7 +73,13 @@ namespace Okurleiga_hf.Windows.View
 
         private void menu_ButtonDeleteClick(object sender, RoutedEventArgs e)
         {
-
+            //if (apartmentsDataGrid == null)
+            //{
+            //    MessageBox.Show("Ekki hægt að eyða tómum dálk");
+            //}
+            //else
+            //{
+            //    SharedContext.delete            
         }
 
         private void menu_ButtonEditClick(object sender, DataGridBeginningEditEventArgs e)

@@ -13,13 +13,13 @@
     </Window.Resources>
     <Grid DataContext="{StaticResource apartmentsViewSource}">
         <ComboBox x:Name="cbModels" HorizontalAlignment="Left" Margin="34,51,0,0" VerticalAlignment="Top" Width="176"/>
-        <Button Content="Eyða" HorizontalAlignment="Left" Margin="34,209,0,0" VerticalAlignment="Top" Width="75" Click="menu_ButtonDeleteClick"/>
         <Button Content="Breyta" HorizontalAlignment="Left" Margin="135,209,0,0" VerticalAlignment="Top" Width="75" Click="menu_ButtonChangeClick"/>
         <Button Content="Vista" HorizontalAlignment="Left" Margin="135,261,0,0" VerticalAlignment="Top" Width="75" Click="menu_ButtonSaveClick"/>
         <Button Content="Hætta" HorizontalAlignment="Left" Margin="34,261,0,0" VerticalAlignment="Top" Width="75" Click="menu_ButtonQuitClick"/>
-        <DataGrid x:Name="apartmentsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="276,51,36,21" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <Button Content="Eyða" HorizontalAlignment="Left" Margin="34,209,0,0" VerticalAlignment="Top" Width="75"  Command="Delete" Click="menu_ButtonDeleteClick"/>       
+        <DataGrid x:Name="apartmentsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="276,51,36,21" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserDeleteRows="True" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="SizeToHeader"/>                
                 <DataGridTemplateColumn x:Name="registeredAtColumn" Header="Registered At" Width="SizeToHeader">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
