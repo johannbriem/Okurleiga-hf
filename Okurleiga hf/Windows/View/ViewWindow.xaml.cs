@@ -32,7 +32,7 @@ namespace Okurleiga_hf.Windows.View
         private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             /* Hérna langar mig til að birta uppls um alla þá dálka sem eru í þessum töflum hérna undir models ->
-             * Byggt á því hvað er valið í Comboboxinu og svo bara breytt og eytt því sem er valið hérna inni Datagrid.
+             * Byggt á því hvað er valið í Comboboxinu og svo bara breytt og eytt því sem er valið hérna inni Datagrid.*/
         }
     }
 }
