@@ -12,94 +12,94 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        mc:Ignorable="d"
-        Title="Okurleiga hf." Height="450" Width="800" Loaded="Window_Loaded">
+        mc:Ignorable="d" Foreground="White"
+        Title="Okurleiga hf." Height="600" Width="1080" Loaded="Window_Loaded" WindowStyle="None">
     <Window.Resources>
         <local:OkurleigaDataSet x:Key="okurleigaDataSet"/>
         <CollectionViewSource x:Key="employeesViewSource" Source="{Binding Employees, Source={StaticResource okurleigaDataSet}}"/>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>           
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
     </Window.Resources>
-    <Grid DataContext="{StaticResource employeesViewSource}">
-        <Menu Height="Auto" VerticalAlignment="Top">
 
-            <MenuItem Header="Skrá">
-                <MenuItem Header="Nýskrá">
-                    <MenuItem Header="Húsnæði..." Click="menu_NewApartmentClick">
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="House"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Leigjanda..." Click="menu_NewCustomerClick">
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="User"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Eiganda..." Click="menu_NewApartmentOwnerClick">
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="User"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Starfsmann..." Click="menu_NewEmployeeClick" >
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="User"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Leigu..." Click="menu_NewRentClick">
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="FileDocument"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
-                    <MenuItem Header="Atvik..." Click="menu_NewApartmentIncidentClick">
-                        <MenuItem.Icon>
-                            <materialDesign:PackIcon Kind="Wrench"/>
-                        </MenuItem.Icon>
-                    </MenuItem>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
 
-                </MenuItem>
-                <MenuItem Header="Prenta...">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="Printer"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Vista..." >
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="ContentSave"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Hætta" Click="menu_QuitClick" >
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="WindowClose"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-
-            <MenuItem Header="Skoða">
-                <MenuItem Header="Húsnæði..." Click="menu_ViewApartmentClick">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="House"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Eigendur..." Click="menu_ViewApartmentOwnersClick">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="User"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Leigjendur..." Click="menu_ViewCustomersClick">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="User"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Leigu..." Click="menu_ViewRentClick" >
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="FileDocument"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem Header="Atvikalisti..." Click="menu_ViewApartmentIncidentsClick">
-                    <MenuItem.Icon>
-                        <materialDesign:PackIcon Kind="Wrench"/>
-                    </MenuItem.Icon>
-                </MenuItem>
-            </MenuItem>
-        </Menu>
-    </Grid>
+    <Grid Background="LightGray">
+        
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF454DF7">
+            <TextBlock Text="Okurleigan hf." HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22"/>
+            <StackPanel VerticalAlignment="Center">
+                <materialDesign:PopupBox HorizontalAlignment="Right" Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                    <StackPanel Width="150">
+                        <Button Content="Notandi"/>
+                        <Button Content="Upplýsingar"/>
+                        <Separator/>
+                        <Button x:Name="btnPopUpQuit" Content="Hætta" Click="BtnPopUpQuit_Click"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF444141">
+            <StackPanel>
+                <Grid Height="150" Background="White">
+                    <Button x:Name="btnCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="btnCloseMenu_Click">
+                        <materialDesign:PackIcon Foreground="#FF444141" Kind="ArrowLeft" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="btnOpenMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btnOpenMenu_Click">
+                        <materialDesign:PackIcon Foreground="#FF444141" Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                </Grid>
+                <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF454DF7">
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Heim" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Pencil" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Nýskrá" VerticalAlignment="Center" Margin="20 10" PreviewMouseDown="TextBlock_PreviewMouseDown"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Ticket" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Skoða" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="Heim" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="GithubBox" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Text="GitHub" VerticalAlignment="Center" Margin="20 10"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
+        </Grid>
+        <ContentControl Content="{Binding}"/>
+    </Grid>      
 </Window>
 

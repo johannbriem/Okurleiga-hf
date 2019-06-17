@@ -30,30 +30,10 @@ namespace Okurleiga_hf.Windows
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            CollectionViewSource view = new CollectionViewSource();
-            //SharedContext.dBContext.ApartmentIncidents.Load();            
-            //SharedContext.dBContext.Apartments.Load();            
-            //SharedContext.dBContext.Employees.Load();
-
-            //SharedContext.ApartmentIncidents = SharedContext.dBContext.ApartmentIncidents.Local;            
-            //SharedContext.Employees = SharedContext.dBContext.Employees.Local;
-            //SharedContext.Apartments = SharedContext.dBContext.Apartments.Local;
-
-            //cbApartments.SelectedItem = ai;
-
-            //CollectionViewSource view = new CollectionViewSource();
-            //SharedContext.dBContext.Apartments.Load();
-            //SharedContext.Apartments = SharedContext.dBContext.Apartments.Local;
-
-            //this.DataContext = SharedContext.Apartments;
-            //this.DataContext = SharedContext.Employees;
             ai = new ApartmentIncident();
+            cbApartments.DataContext = SharedContext.Apartments;
+            cbEmployees.DataContext = SharedContext.Employees;
             this.DataContext = ai;
-
-
-            view.Source = SharedContext.Apartments;
-            view.Source = SharedContext.Employees;
-
 
         }
 
@@ -84,23 +64,24 @@ namespace Okurleiga_hf.Windows
                 }
 
         }
-    
+
         private void CbApartments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SharedContext.selectedApartment = (Apartment)cbApartments.SelectedItem;
         }
-
-        private void btn_Save(object sender, RoutedEventArgs e)
-        {
-            
-            SharedContext.dBContext.ApartmentIncidents.Add(ai);
-            SharedContext.dBContext.SaveChanges();
-            this.Close();
-        }
-
         private void CbEmployees_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SharedContext.selectedEmployee = (Employee)cbEmployees.SelectedItem;
         }
+
+        private void btn_Save(object sender, RoutedEventArgs e)
+        {            
+            SharedContext.dBContext.ApartmentIncidents.Add(ai);
+            SharedContext.dBContext.SaveChanges();
+            
+
+            this.Close();
+        }
+
     }
 }

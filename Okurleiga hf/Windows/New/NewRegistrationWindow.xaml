@@ -1,0 +1,118 @@
+﻿<Window x:Class="Okurleiga_hf.Windows.New.NewRegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Okurleiga_hf.Windows.New"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"        
+        xmlns:materialDesignConverters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"        
+        xmlns:smtx="clr-namespace:ShowMeTheXAML;assembly=ShowMeTheXAML"
+        mc:Ignorable="d"
+        Title="NewRegistrationWindow" Height="450" Width="800" WindowStyle="None">    
+
+    <Window.Resources>        
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.ColumnSpan="5" Height="50" VerticalAlignment="Top" Grid.RowSpan="2">           
+            <StackPanel Background="#FF0B6FC7" Height="50" VerticalAlignment="Top" Width="Auto">                
+                <!--<materialDesign:PopupBox HorizontalAlignment="Right" Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                    <StackPanel VerticalAlignment="Center">
+                        <Button Content="Notandi"/>
+                        <Button Content="Upplýsingar"/>
+                        <Separator/>
+                        <Button x:Name="btnPopUpQuit" Content="Hætta"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>-->
+                <!--<Button Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10">-->
+                <!--<materialDesign:PackIcon Kind="Power" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Center" Width="25" Height="25" PreviewMouseDown="PackIcon_PreviewMouseDown" IsTabStop="True"/>-->
+                <!--</Button>-->
+                <smtx:XamlDisplay Key="buttons_1" Margin="10 0" HorizontalAlignment="Right">
+                    <Button Style="{StaticResource MaterialDesignFloatingActionButton}"
+                            ToolTip="MaterialDesignFloatingActionButton" Width="25" Height="25" Margin="10" VerticalAlignment="Center" HorizontalAlignment="Right" Background="Gray" Click="Button_Click">
+                        <materialDesign:PackIcon Kind="Power" Height="25" Width="25" />
+                    </Button>
+                </smtx:XamlDisplay>
+            </StackPanel>
+        </DockPanel>
+        <DockPanel Grid.RowSpan="5" HorizontalAlignment="Left" Width="70">
+            <Grid x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF444141">
+                <StackPanel>
+                    <Grid Height="150" Background="White">
+                        <Button x:Name="btnCloseMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Visibility="Collapsed" Click="btnCloseMenu_Click">
+                            <materialDesign:PackIcon Foreground="#FF444141" Kind="ArrowLeft" Width="25" Height="25"/>
+                        </Button>
+                        <Button x:Name="btnOpenMenu" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Click="btnOpenMenu_Click">
+                            <materialDesign:PackIcon Foreground="#FF444141" Kind="Menu" Width="25" Height="25"/>
+                        </Button>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ViewDashboard" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                                <TextBlock Text="Heim" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </Grid>
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FF454DF7">
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="UserCardDetails" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                                <TextBlock Text="Viðskiptavinur" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="ReportProblem" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                                <TextBlock Text="Atvik" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="User" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                                <TextBlock Text="Eiganda" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="House" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                                <TextBlock Text="Húsnæði" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="60">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Worker" Width="25" Height="25" Margin="10" VerticalAlignment="Center"/>
+                                <TextBlock Text="Starfsmann" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>                            
+                        </ListViewItem>                        
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </DockPanel>        
+    </Grid>
+</Window>

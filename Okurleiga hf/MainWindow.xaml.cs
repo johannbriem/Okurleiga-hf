@@ -47,78 +47,30 @@ namespace Okurleiga_hf
             SharedContext.Apartments = SharedContext.dBContext.Apartments.Local;
             
         }
+       
 
-        private void menu_NewCustomerClick(object sender, RoutedEventArgs e)
-        {               
-            NewCustomerWindow win = new NewCustomerWindow();
-            win.ShowDialog();            
-        }
-
-        private void menu_QuitClick(object sender, RoutedEventArgs e)
+        private void BtnPopUpQuit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
-        private void menu_NewApartmentClick(object sender, RoutedEventArgs e)
-        {            
-            NewApartmentWindow win = new NewApartmentWindow();
-            win.ShowDialog();            
+        private void btnOpenMenu_Click(object sender, RoutedEventArgs e)
+        {
+            btnOpenMenu.Visibility = Visibility.Collapsed;
+            btnCloseMenu.Visibility = Visibility.Visible;
         }
 
-        private void menu_NewApartmentIncidentClick(object sender, RoutedEventArgs e)
+        private void btnCloseMenu_Click(object sender, RoutedEventArgs e)
         {
-            NewApartmentIncidentWindow win = new NewApartmentIncidentWindow();
-            win.ShowDialog();
-        }
-        private void menu_NewApartmentOwnerClick(object sender, RoutedEventArgs e)
-        {
-            NewApartmentOwnerWindow win = new NewApartmentOwnerWindow();
-            win.ShowDialog();
+            btnOpenMenu.Visibility = Visibility.Visible;
+            btnCloseMenu.Visibility = Visibility.Collapsed;
         }
 
-        private void menu_NewRentClick(object sender, RoutedEventArgs e)
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            NewRentWindow win = new NewRentWindow();
-            win.ShowDialog();
-        }
-        private void menu_NewEmployeeClick(object sender, RoutedEventArgs e)
-        {
-            NewEmployeeWindow win = new NewEmployeeWindow();
-            win.ShowDialog();
-        }
-        private void menu_ViewApartmentClick(object sender, RoutedEventArgs e)
-        {
-            ViewWindow win = new ViewWindow();
-            win.ShowDialog();
-        }
-
-        private void menu_ViewApartmentOwnersClick(object sender, RoutedEventArgs e)
-        {
-            ViewApartmentOwnerWindow win = new ViewApartmentOwnerWindow();
-            win.ShowDialog();
-        }
-
-        private void menu_ViewCustomersClick(object sender, RoutedEventArgs e)
-        {
-            ChangeCustomerWindow win = new ChangeCustomerWindow();
-            win.ShowDialog();
-        }
-
-        private void menu_ViewApartmentIncidentsClick(object sender, RoutedEventArgs e)
-        {
-            ViewApartmentIncidentWindow win = new ViewApartmentIncidentWindow();
-            win.ShowDialog();
-        }
-
-        private void menu_ViewRentClick(object sender, RoutedEventArgs e)
-        {
-            ViewRentWindow win = new ViewRentWindow();
-            win.ShowDialog();
-        }
-
-        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            NewRegistrationWindow win = new NewRegistrationWindow();
+            win.Topmost = true;
+            win.Show();
         }
     }
 }
