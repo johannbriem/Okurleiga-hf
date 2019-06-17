@@ -83,5 +83,10 @@ namespace Okurleiga_hf.Models
                 PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
             }
         }
+
+        public override string ToString()
+        {
+            return ContactFullName;            
+        }
     }
 }

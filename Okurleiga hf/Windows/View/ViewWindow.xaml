@@ -6,43 +6,24 @@
         xmlns:local="clr-namespace:Okurleiga_hf.Windows.View"
         xmlns:Okurleiga_hf="clr-namespace:Okurleiga_hf" x:Class="Okurleiga_hf.Windows.View.ViewWindow"
         mc:Ignorable="d"
-        Title="ViewWindow" Height="550" Width="1038" Loaded="Window_Loaded">
+        Title="ViewWindow" Height="511.364" Width="775.5" Loaded="Window_Loaded">
     <Window.Resources>
-        <Okurleiga_hf:OkurleigaDataSet x:Key="okurleigaDataSet"/>
-        <CollectionViewSource x:Key="apartmentsViewSource" Source="{Binding Apartments, Source={StaticResource okurleigaDataSet}}"/>
+        <!--<Okurleiga_hf:OkurleigaDataSet x:Key="okurleigaDataSet"/>
+        <CollectionViewSource x:Key="apartmentsViewSource" Source="{Binding Apartments, Source={StaticResource okurleigaDataSet}}"/>-->
     </Window.Resources>
-    <Grid DataContext="{StaticResource apartmentsViewSource}">
-        <ComboBox x:Name="cbModels" HorizontalAlignment="Left" Margin="34,51,0,0" VerticalAlignment="Top" Width="176" SelectionChanged="CbModels_SelectionChanged"/>
+    <Grid>
+        <ComboBox x:Name="cbModels" HorizontalAlignment="Left" Margin="34,51,0,0" VerticalAlignment="Top" Width="176" SelectionChanged="CbModels_SelectionChanged" SelectedIndex="0">
+            <ComboBoxItem x:Name="cbiApartment" Selected="CbiApartment_Selected">Íbúðir</ComboBoxItem>
+            <ComboBoxItem x:Name="cbiEmployees" Selected="CbiEmployees_Selected">Starfsmenn</ComboBoxItem>
+            <ComboBoxItem x:Name="cbiApartmentOwners" Selected="CbiApartmentOwners_Selected">Eigendur</ComboBoxItem>
+            <ComboBoxItem x:Name="cbiApartmentIncidents" Selected="CbiApartmentIncidents_Selected">Atvikalisti</ComboBoxItem>
+            <ComboBoxItem x:Name="cbiCustomers" Selected="CbiCustomers_Selected">Viðskiptavinir</ComboBoxItem>
+            <ComboBoxItem x:Name="cbiRents" Selected="CbiRents_Selected">Leigusamningar</ComboBoxItem>
+        </ComboBox>
         <Button Content="Breyta" HorizontalAlignment="Left" Margin="135,209,0,0" VerticalAlignment="Top" Width="75" Click="menu_ButtonChangeClick"/>
         <Button Content="Vista" HorizontalAlignment="Left" Margin="135,261,0,0" VerticalAlignment="Top" Width="75" Click="menu_ButtonSaveClick"/>
         <Button Content="Hætta" HorizontalAlignment="Left" Margin="34,261,0,0" VerticalAlignment="Top" Width="75" Click="menu_ButtonQuitClick"/>
-        <Button Content="Eyða" HorizontalAlignment="Left" Margin="34,209,0,0" VerticalAlignment="Top" Width="75"  Command="Delete" Click="menu_ButtonDeleteClick"/>       
-        <DataGrid x:Name="apartmentsDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="276,51,36,21" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserDeleteRows="True" CanUserAddRows="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="idColumn" Binding="{Binding Id}" Header="Id" IsReadOnly="True" Width="SizeToHeader"/>                
-                <DataGridTemplateColumn x:Name="registeredAtColumn" Header="Registered At" Width="SizeToHeader">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding RegisteredAt, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="addressColumn" Binding="{Binding Address}" Header="Address" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="cityColumn" Binding="{Binding City}" Header="City" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="zipColumn" Binding="{Binding Zip}" Header="Zip" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="bedroomColumn" Binding="{Binding Bedroom}" Header="Bedroom" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="bathroomColumn" Binding="{Binding Bathroom}" Header="Bathroom" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="sizeColumn" Binding="{Binding Size}" Header="Size" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="rentPrizeColumn" Binding="{Binding RentPrize}" Header="Rent Prize" Width="SizeToHeader"/>
-                <DataGridCheckBoxColumn x:Name="availableColumn" Binding="{Binding Available}" Header="Available" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="rentTypeColumn" Binding="{Binding RentType}" Header="Rent Type" Width="SizeToHeader"/>
-                <DataGridCheckBoxColumn x:Name="garageColumn" Binding="{Binding Garage}" Header="Garage" Width="SizeToHeader"/>
-                <DataGridCheckBoxColumn x:Name="smokingColumn" Binding="{Binding Smoking}" Header="Smoking" Width="SizeToHeader"/>
-                <DataGridCheckBoxColumn x:Name="petColumn" Binding="{Binding Pet}" Header="Pet" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="typeColumn" Binding="{Binding Type}" Header="Type" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="apartmentOwner_Id" Binding="{Binding ApartmentOwner_Id}" Header="Apartment Owner Id" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
+        <Button Content="Eyða" HorizontalAlignment="Left" Margin="34,209,0,0" VerticalAlignment="Top" Width="75"  Command="Delete" Click="menu_ButtonDeleteClick"/>
+        <DataGrid x:Name="apartmentsDataGrid" AutoGenerateColumns="True" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="276,51,36,21" RowDetailsVisibilityMode="VisibleWhenSelected" CanUserDeleteRows="True" CanUserAddRows="False" AutoGeneratingColumn="ApartmentsDataGrid_AutoGeneratingColumn" />
     </Grid>
 </Window>

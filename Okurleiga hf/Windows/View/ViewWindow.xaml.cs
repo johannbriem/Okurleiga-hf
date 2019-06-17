@@ -1,6 +1,7 @@
 ﻿using Okurleiga_hf.Context;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,34 +28,65 @@ namespace Okurleiga_hf.Windows.View
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Okurleiga_hf.OkurleigaDataSet okurleigaDataSet = ((Okurleiga_hf.OkurleigaDataSet)(this.FindResource("okurleigaDataSet")));
-            // Load data into the table Apartments. You can modify this code as needed.
-            Okurleiga_hf.OkurleigaDataSetTableAdapters.ApartmentsTableAdapter okurleigaDataSetApartmentsTableAdapter = new Okurleiga_hf.OkurleigaDataSetTableAdapters.ApartmentsTableAdapter();
-            okurleigaDataSetApartmentsTableAdapter.Fill(okurleigaDataSet.Apartments);
-            System.Windows.Data.CollectionViewSource apartmentsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("apartmentsViewSource")));
-            apartmentsViewSource.View.MoveCurrentToFirst();
+           this.DataContext = SharedContext.Apartments;
+           // this.DataContext = SharedContext.Employees;
+        }
+
+        private void ApartmentsDataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+
+            // Fyrir hvert property sem þú vilt ekki sjá í tölfunni sem generate'ast - getur þú gert eftirfarandi if skipun
+            // prófaðu að commenta hana burt og sjáðu muninn
+            if (propertyDescriptor.DisplayName == "Database")
+            {
+                e.Cancel = true;
+            }
+            if (propertyDescriptor.DisplayName == "ChangeTracker")
+            {
+                e.Cancel = true;
+            }
+            // Getur líka dynamically breytt headernum hérna svona...
+            if (propertyDescriptor.DisplayName == "Configuration")
+            {
+                e.Column.Header = "Fjör í Keflavík!";
+
+            }
 
         }
 
-        //void DataGrid_PreviewKeyDown(object sender, KeyEventArgs e)
-        //{
-        //    DataGrid dg = sender as DataGrid;
-        //    if (dg != null)
-        //    {
-        //        DataGridRow dgr = (DataGridRow)(dg.ItemContainerGenerator.ContainerFromIndex(dg.SelectedIndex));
-        //        if (e.Key == Key.Delete && !dgr.IsEditing)
-        //        {
-        //            // User is attempting to delete the row
-        //            var result = MessageBox.Show(
-        //                "About to delete the current row.\n\nProceed?",
-        //                "Delete",
-        //                MessageBoxButton.YesNo,
-        //                MessageBoxImage.Question,
-        //                MessageBoxResult.No);
-        //            e.Handled = (result == MessageBoxResult.No);
-        //        }
-        //    }
-        //}
+
+        private void CbiApartment_Selected(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = SharedContext.Apartments;
+        }
+
+        private void CbiEmployees_Selected(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = SharedContext.Employees;
+        }
+
+        private void CbiApartmentOwners_Selected(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = SharedContext.ApartmentOwners;
+        }
+
+        private void CbiApartmentIncidents_Selected(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = SharedContext.ApartmentIncidents;
+        }
+
+        private void CbiCustomers_Selected(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = SharedContext.Customers;
+        }
+
+        private void CbiRents_Selected(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = SharedContext.Rents;
+        }
 
         private void menu_ButtonSaveClick(object sender, RoutedEventArgs e)
         {
@@ -73,13 +105,7 @@ namespace Okurleiga_hf.Windows.View
 
         private void menu_ButtonDeleteClick(object sender, RoutedEventArgs e)
         {
-            //if (apartmentsDataGrid == null)
-            //{
-            //    MessageBox.Show("Ekki hægt að eyða tómum dálk");
-            //}
-            //else
-            //{
-            //    SharedContext.delete            
+                       
         }
 
         private void menu_ButtonEditClick(object sender, DataGridBeginningEditEventArgs e)
@@ -91,5 +117,8 @@ namespace Okurleiga_hf.Windows.View
         {
            
         }
+
+        
     }
 }
+

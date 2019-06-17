@@ -5,13 +5,37 @@
              xmlns:local="clr-namespace:Okurleiga_hf"
              StartupUri="MainWindow.xaml">    
         <Application.Resources>
+        
             <ResourceDictionary>
-                <ResourceDictionary.MergedDictionaries>
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
-                    <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
-                </ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
+                            <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                        </ResourceDictionary.MergedDictionaries>
+            
+                <local:BoolToVisibilityConverter x:Key="InputToVisibility"/>
+                    <Style x:Key="WatermarkTextbox" TargetType="{x:Type TextBox}">
+                        <Setter Property="BorderBrush" Value="Black"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TextBox}">
+                                    <Grid>
+                                        <TextBlock Text="Lýsing á atviki...">
+                                            <TextBlock.Visibility>
+                                                <MultiBinding Converter="{StaticResource InputToVisibility}">
+                                                <Binding ElementName="inputText" Path="Text.IsEmpty"/>
+                                                <Binding ElementName="inputText" Path="IsFocused"/>
+                                            </MultiBinding>
+                                            </TextBlock.Visibility>
+                                        </TextBlock>
+                                        <TextBox x:Name="inputText" Background="Transparent"/>
+                                    </Grid>
+                            </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
             </ResourceDictionary>
-        </Application.Resources>
+    </Application.Resources>
     </Application>

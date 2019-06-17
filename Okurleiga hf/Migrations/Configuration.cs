@@ -76,7 +76,8 @@ namespace Okurleiga_hf.Migrations
                 City = "Reykjavík",
                 Zip = 201,
                 Email = "siggi@loftid.is",
-                Phone = "571-3467"
+                Phone = "571-3467",
+                SocialNumber = "511299-5489"
             };
 
             ApartmentOwner ao2 = new ApartmentOwner()
@@ -88,7 +89,8 @@ namespace Okurleiga_hf.Migrations
                 City = "Reykjavík",
                 Zip = 201,
                 Email = "stebbi@byggjum.is",
-                Phone = "571-1007"
+                Phone = "571-1007",
+                SocialNumber = "125812-5969"
             };
 
             ApartmentOwner ao3 = new ApartmentOwner()
@@ -100,7 +102,8 @@ namespace Okurleiga_hf.Migrations
                 City = "Kópavogur",
                 Zip = 241,
                 Email = "adalheidur@dhl.is",
-                Phone = "865-2365"
+                Phone = "865-2365",
+                SocialNumber = "254587-1254"
                 
             };
                         

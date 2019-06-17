@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Okurleiga_hf.Models
     class Employee : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
+        
         public int Id { get; set; }
         public ObservableCollection<Rent> Rents { get; set; }
 
@@ -58,10 +59,13 @@ namespace Okurleiga_hf.Models
         public string City { get; set; }
         public int Zip { get; set; }
         public string Phone { get; set; }
-        public DateTime DateStart { get; set; }        
+        [Column(TypeName = "datetime2")]
+        public DateTime DateStart { get; set; }
+        
 
         public Employee()
         {
+            this.DateStart = DateTime.Now;
             this.Rents = new ObservableCollection<Rent>();
         }
 

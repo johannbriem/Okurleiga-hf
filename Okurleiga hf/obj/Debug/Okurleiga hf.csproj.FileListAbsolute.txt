@@ -1,25 +1,3 @@
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.exe.config
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.exe
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.pdb
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\ControlzEx.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MahApps.Metro.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignColors.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignThemes.MahApps.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignThemes.Wpf.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\ShowMeTheXAML.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\ControlzEx.pdb
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.xml
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MahApps.Metro.pdb
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MahApps.Metro.xml
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignColors.pdb
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csprojAssemblyReference.cache
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\MainWindow.baml
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\Change\ChangeApartmentIncidentWindow.baml
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\New\NewApartmentIncidentWindow.baml
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\New\NewApartmentOwnerWindow.baml
@@ -42,20 +20,42 @@ C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\Vi
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewApartmentWindow.g.cs
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\Change\ChangeCustomerWindow.g.cs
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewRentWindow.g.cs
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewWindow.g.cs
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\App.g.cs
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf_MarkupCompile.cache
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf_MarkupCompile.lref
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\App.baml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\MainWindow.baml
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewApartmentIncidentWindow.baml
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewApartmentOwnerWindow.baml
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewApartmentWindow.baml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewWindow.baml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.exe
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.pdb
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.exe.config
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.exe
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\Okurleiga hf.pdb
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\ControlzEx.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MahApps.Metro.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignColors.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignThemes.MahApps.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\ShowMeTheXAML.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\ControlzEx.pdb
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.xml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MahApps.Metro.pdb
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MahApps.Metro.xml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\App.baml
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.g.resources
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga_hf.Properties.Resources.resources
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csproj.GenerateResource.cache
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csproj.CopyComplete
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.exe
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.pdb
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewWindow.g.cs
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Windows\View\ViewWindow.baml
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\Okurleiga hf.csprojAssemblyReference.cache

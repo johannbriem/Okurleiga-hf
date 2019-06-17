@@ -37,5 +37,10 @@ namespace Okurleiga_hf.Models
             this.Customers = new ObservableCollection<Customer>();
            
         }
+
+        //public override string ToString()
+        //{
+        //    return Address;
+        //}
     }
 }

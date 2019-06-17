@@ -2,6 +2,7 @@
 using Okurleiga_hf.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Okurleiga_hf.Windows.New
     /// </summary>
     public partial class NewEmployeeWindow : Window
     {
-        Employee em;
+        Employee emp;
 
         public NewEmployeeWindow()
         {
@@ -30,13 +31,13 @@ namespace Okurleiga_hf.Windows.New
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            em = new Employee();
-            this.DataContext = em;
+            emp = new Employee();
+            this.DataContext = emp;
         }
 
         private void BtnSaveClick_Click(object sender, RoutedEventArgs e)
-        {
-            SharedContext.dBContext.Employees.Add(em);
+        {            
+            SharedContext.dBContext.Employees.Add(emp);
             SharedContext.dBContext.SaveChanges();
             this.Close();
         }

@@ -18,5 +18,8 @@ namespace Okurleiga_hf.Context
         public static ObservableCollection<ApartmentOwner> ApartmentOwners = new ObservableCollection<ApartmentOwner>();
         public static ObservableCollection<Rent> Rents = new ObservableCollection<Rent>();
         public static ObservableCollection<Employee> Employees = new ObservableCollection<Employee>();
+
+        public static Apartment selectedApartment = new Apartment();
+        public static Employee selectedEmployee = new Employee();
     }
 }

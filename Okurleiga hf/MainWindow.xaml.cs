@@ -33,7 +33,7 @@ namespace Okurleiga_hf
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            CollectionViewSource view = new CollectionViewSource(); ;
+            CollectionViewSource view = new CollectionViewSource();
             SharedContext.dBContext.ApartmentIncidents.Load();
             SharedContext.dBContext.ApartmentOwners.Load();
             SharedContext.dBContext.Apartments.Load();
@@ -44,17 +44,8 @@ namespace Okurleiga_hf
             SharedContext.ApartmentIncidents = SharedContext.dBContext.ApartmentIncidents.Local;
             SharedContext.ApartmentOwners = SharedContext.dBContext.ApartmentOwners.Local;
             SharedContext.Employees = SharedContext.dBContext.Employees.Local;
-
-
-
-
-
-            Okurleiga_hf.OkurleigaDataSet okurleigaDataSet = ((Okurleiga_hf.OkurleigaDataSet)(this.FindResource("okurleigaDataSet")));
-            // Load data into the table Employees. You can modify this code as needed.
-            Okurleiga_hf.OkurleigaDataSetTableAdapters.EmployeesTableAdapter okurleigaDataSetEmployeesTableAdapter = new Okurleiga_hf.OkurleigaDataSetTableAdapters.EmployeesTableAdapter();
-            okurleigaDataSetEmployeesTableAdapter.Fill(okurleigaDataSet.Employees);
-            System.Windows.Data.CollectionViewSource employeesViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("employeesViewSource")));
-            employeesViewSource.View.MoveCurrentToFirst();
+            SharedContext.Apartments = SharedContext.dBContext.Apartments.Local;
+            
         }
 
         private void menu_NewCustomerClick(object sender, RoutedEventArgs e)
