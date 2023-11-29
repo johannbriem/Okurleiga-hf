@@ -72,5 +72,10 @@ namespace Okurleiga_hf
             win.Topmost = true;
             win.Show();
         }
+
+        private void btnViewAppartments_Click(object sender, RoutedEventArgs e)
+        {
+            btnViewAppartments.Visibility = Visibility.Visible;
+        }
     }
 }

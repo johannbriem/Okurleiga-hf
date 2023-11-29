@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\obj\Debug\
+C:\Users\johan\source\repos\johannbriem\Okurleiga-hf\Okurleiga hf\obj\Debug\
 Okurleiga_hf
 none
 false
 DEBUG;TRACE
-C:\Users\Lenovo\source\repos\Okurleiga hf\Okurleiga hf\App.xaml
-15-178221552
+C:\Users\johan\source\repos\johannbriem\Okurleiga-hf\Okurleiga hf\App.xaml
+15-1845253876
 
-31-702784606
-34823701129
+31-1552251869
+34-1787317845
 MainWindow.xaml;Windows\Change\ChangeApartmentIncidentWindow.xaml;Windows\New\NewApartmentIncidentWindow.xaml;Windows\New\NewApartmentOwnerWindow.xaml;Windows\New\NewApartmentWindow.xaml;Windows\New\NewCustomerWindow.xaml;Windows\New\NewEmployeeWindow.xaml;Windows\New\NewRegistrationWindow.xaml;Windows\New\NewRentWindow.xaml;Windows\View\ViewApartmentIncidentWindow.xaml;Windows\View\ViewApartmentOwnerWindow.xaml;Windows\View\ViewApartmentWindow.xaml;Windows\Change\ChangeCustomerWindow.xaml;Windows\View\ViewRentWindow.xaml;Windows\View\ViewWindow.xaml;
 
-False
+True
 
